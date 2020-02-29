@@ -32,7 +32,6 @@
         <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/bulma@0.7.5/css/bulma.min.css">
         <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.4.1/css/all.css">
         <link href="https://fonts.googleapis.com/css?family=Fira+Sans&display=swap" rel="stylesheet">
-        <#--        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">-->
         <style>
             body > .footer,
             body > .navbar,
@@ -41,21 +40,29 @@
             }
         </style>
 
-        <#if is_post?? || is_sheet??>
+        <#if is_post?? || is_sheet?? || is_journal??>
             <style>
                 .content code .number {
                     background-color: transparent;
                     border-radius: 0;
                     display: unset;
-                    font-size: .85em;
+                    font-size: 1em;
                     margin-right: 0;
                     padding: 0;
                     vertical-align: unset;
                 }
+                .tag {
+                    font-size: 1em !important;
+                    padding-right: 0 !important;
+                    padding-left: 0 !important;
+                }
+                .attr-name {
+                    padding-left: 0.75em !important;
+                }
             </style>
         </#if>
 
-        <#if is_post?? || is_sheet??>
+        <#if is_post?? || is_sheet?? || is_journal??>
             <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
             <link rel="stylesheet"
                   href="//cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
@@ -67,22 +74,18 @@
         <link rel="stylesheet" href="${static!}/source/css/style.css">
         <link rel="stylesheet" href="${static!}/source/css/bundle.css">
         <link rel="stylesheet" href="${static!}/source/css/back-to-top.css">
-        <#--        <link rel="stylesheet" href="${static!}/source/css/style.theme.css">-->
         <#include "./plugin/style.theme.ftl">
-        <#if post??>
-        <#--            <link rel="stylesheet" type="text/css"-->
-        <#--                  href="${static!}/source/lib/prism/css/prism-${settings.code_pretty!'Default'}.css"/>-->
+        <#if post?? || journals??>
             <link rel="stylesheet" type="text/css"
-                  href="${static!}/source/lib/prism/css/prism.css"/>
-            <link rel="stylesheet" type="text/css"
-                  href="${static!}/source/lib/prism/css/prism-line-numbers.css"/>
+                  href="${static!}/source/lib/prism/css/prism-Tomorrow Night.css"/>
             <script type="text/javascript" src="${static!}/source/lib/prism/js/prism.js"></script>
-            <script type="text/javascript" src="${static!}/source/lib/prism/js/prism-line-numbers.js"></script>
         </#if>
         <#if is_index??>
             <link rel="stylesheet" href="${static!}/source/css/widget_pin.css">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.min.css">
         </#if>
+
+        <script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
     </head>
     <body class="is-3-column">
     <@navbar 'page' />

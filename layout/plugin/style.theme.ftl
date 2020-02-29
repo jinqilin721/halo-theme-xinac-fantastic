@@ -17,10 +17,10 @@
         --link-hover-color: #1485FE;
 
         /*code highlight*/
-        --code-bg-color: #F1F3F3;
-        --code-default-color: #A2A1A1;
-        --code-line-numbers-bg-color: #EBEDED;
-        --code-line-numbers-color: #888;
+        --code-bg-color: rgb(45,45,45);
+        --code-default-color: rgb(45,45,45);
+        --code-line-numbers-bg-color: rgb(45,45,45);
+        --code-line-numbers-color: skyblue;
 
         --code-keyworks-color: #7012cc;
         --code-class-color: #f2777a;
@@ -40,48 +40,6 @@
         --toc-item-bg-hover: #1485FE;
     }
     <#if settings.auto_theme!true>
-    /*light theme*/
-    @media (prefers-color-scheme: light) {
-        :root {
-            --color: #333333;
-            --background: #f7f7f7;
-            --cardbgcolor: #fff;
-            --cardcolor: #333;
-            --cardtitlecolor: #333333;
-            --navbarcolor: #333333;
-            --navbarbgcolor: rgba(255, 255, 255, 0.7);
-            --img-default-filter: none;
-            --img-hover-filter: none;
-            --btn-bg-color: whitesmoke;
-            --btn-color: #333333;
-            --btn-hover-color: #eeeeee;
-            --link-color: #1485FE;
-            --link-hover-color: #1485FE;
-
-            /*code highlight*/
-            --code-bg-color: #F1F3F3;
-            --code-default-color: #A2A1A1;
-            --code-line-numbers-bg-color: #EBEDED;
-            --code-line-numbers-color: #888;
-
-            --code-keyworks-color: #7012cc;
-            --code-class-color: #f2777a;
-            --code-cdata-color: hsl(313, 67%, 36%);
-            --code-symbol-color: hsl(33, 83%, 45%);
-            --code-variable-color: hsl(281, 89%, 64%);
-            --code-regex-color: #e90;
-            --code-deleted-color: red;
-            --code-toolbar-bg-color: #EBEDED;
-            --code-toolbar-color: #1485FE;
-            --code-line-numbers-rows-color: #888;
-            /*toc*/
-            --toc-dot-color: #1485FE;
-            --toc-dot-active-color: #1485FE;
-            --toc-dot-active-bg-color: #ebedef;
-            --toc-vertical-line-color: #1485FE;
-            --toc-item-bg-hover: #1485FE;
-        }
-    }
 
     /* Dark mode */
     @media (prefers-color-scheme: dark) {
@@ -106,7 +64,7 @@
             --code-bg-color: #2c2a2a;
             --code-default-color: #A2A1A1;
             --code-line-numbers-bg-color: #403E3E;
-            --code-line-numbers-color: #888;
+            --code-line-numbers-color: #fff;
 
             --code-keyworks-color: #c9c;
             --code-class-color: #f2777a;
@@ -127,51 +85,7 @@
             --toc-bg-bg-hover: #321;
         }
     }
-
-    <#else>
-    @media (prefers-color-scheme: light) {
-        :root {
-            --color: #333333;
-            --background: #f7f7f7;
-            --cardbgcolor: #fff;
-            --cardcolor: #333;
-            --cardtitlecolor: #333333;
-            --navbarcolor: #333333;
-            --navbarbgcolor: rgba(255, 255, 255, 0.7);
-            --img-default-filter: none;
-            --img-hover-filter: none;
-            --btn-bg-color: whitesmoke;
-            --btn-color: #333333;
-            --btn-hover-color: #eeeeee;
-            --link-color: #1485FE;
-            --link-hover-color: #1485FE;
-
-            /*code highlight*/
-            --code-bg-color: #F1F3F3;
-            --code-default-color: #A2A1A1;
-            --code-line-numbers-bg-color: #EBEDED;
-            --code-line-numbers-color: #888;
-
-            --code-keyworks-color: #7012cc;
-            --code-class-color: #f2777a;
-            --code-cdata-color: hsl(313, 67%, 36%);
-            --code-symbol-color: hsl(33, 83%, 45%);
-            --code-variable-color: hsl(281, 89%, 64%);
-            --code-regex-color: #e90;
-            --code-deleted-color: red;
-            --code-toolbar-bg-color: #EBEDED;
-            --code-toolbar-color: #1485FE;
-            --code-line-numbers-rows-color: #888;
-            /*toc*/
-            --toc-dot-color: #1485FE;
-            --toc-dot-active-color: #1485FE;
-            --toc-dot-active-bg-color: #ebedef;
-            --toc-vertical-line-color: #1485FE;
-            --toc-item-bg-hover: #1485FE;
-        }
-    }
     </#if>
-    /* Light mode */
 
 
     html {
@@ -220,10 +134,9 @@
         background-color: var(--background);
     }
 
-    pre,
     blockquote {
         background-color: var(--code-bg-color) !important;
-        color: var(--color) !important;
+        color: #fff !important;
     }
 
     .card .content,
@@ -411,7 +324,7 @@
     }
 
     .line-numbers-rows > span:before {
-        color: var(--code-line-numbers-rows-color);
+        color: #fff;
     }
 
     .content table thead td,
@@ -486,5 +399,10 @@
 
     .has-text-black-ter {
        color: var(--color) !important;
+    }
+
+    blockquote ul {
+        padding: 0 10px !important;
+        margin: 0 !important;
     }
 </style>

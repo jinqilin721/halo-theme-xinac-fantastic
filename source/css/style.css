@@ -662,3 +662,31 @@ p {
 .searchbox .searchbox-result-wrapper {
   overflow-y: visible !important;
 }
+
+.journal-info {
+  display: flex;
+  align-content: center;
+}
+
+.journal-img {
+  width: 50px;
+}
+
+.journal-img img {
+  width: 50px;
+  border-radius: 50%;
+}
+
+.journal-time {
+  margin-left: 10px;
+  width: 80%;
+}
+
+.journal-time p:first-child {
+  padding-top: 10px;
+  margin: 0;
+}
+
+.journal-page {
+  margin-top: 15px;
+}

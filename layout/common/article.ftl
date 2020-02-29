@@ -92,27 +92,43 @@
                     </div>
                 </div>
             </#if>
-
         </div>
     </div>
+                      <#if !index>
+                  <div class="card" style="font-size: 20px;
+    line-height: 1.5em;
+    padding: 5px;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-left: 3px solid skyblue;">
+                    <div class="card-content">
+                                <p style="font-size: 15px;">本文由 <a href="${context!}">${user.nickname!}</a> 创作，如果您觉得本文不错，请随意赞赏<br>采用 <a
+                                            href="https://creativecommons.org/licenses/by/4.0/" target="_blank"
+                                            rel="external nofollow">知识共享署名4.0</a> 国际许可协议进行许可<br>本站文章除注明转载/出处外，均为本站原创或翻译，转载前请务必署名<br>原文链接：<a
+                                            href="${context!}/archives/${post.url!}">${context!}
+                                        /archives/${post.url!}</a><br>最后更新于：${post.editTime?string('yyyy-MM-dd HH:mm:ss')}
+                                </p>
+                            </div>
+                  </div>
+                        </#if>
 
-    <#if !index??>
-        <#if (settings.donate_alipay?? && settings.donate_alipay!='') || (settings.donate_wechat?? && settings.donate_wechat!='')>
-            <div class="card">
-                <div class="card-content">
-                    <h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3>
-                    <div class="buttons is-centered">
-                        <#if settings.donate_alipay?? && settings.donate_alipay!=''>
-                            <#include "../donate/alipay.ftl">
-                        </#if>
-                        <#if settings.donate_wechat?? && settings.donate_wechat!=''>
-                            <#include "../donate/wechat.ftl">
-                        </#if>
-                    </div>
+    <#if !index>
+    <#if (settings.donate_alipay?? && settings.donate_alipay!='') || (settings.donate_wechat?? && settings.donate_wechat!='')>
+        <div class="card">
+            <div class="card-content">
+                <h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3>
+                <div class="buttons is-centered">
+                    <#if settings.donate_alipay?? && settings.donate_alipay!=''>
+                        <#include "../donate/alipay.ftl">
+                    </#if>
+                    <#if settings.donate_wechat?? && settings.donate_wechat!=''>
+                        <#include "../donate/wechat.ftl">
+                    </#if>
                 </div>
             </div>
-        </#if>
+        </div>
     </#if>
+</#if>
 
     <#if !index && nextPost?? && prePost??>
         <div class="card card-transparent">

@@ -14,9 +14,8 @@ box-shadow: 0 1px 2px 0 rgba(0,0,0,0.1);">
                                 <p class="title is-3" style="text-align: center">
                                     ${user.nickname!}
                                 </p>
-                                <p class="is-size-5 is-block" style="padding-left: 1em;text-align: center">
-                                    ${user.description!}
-                                </p>
+                              <br>
+                             <p class="is-size-6 is-block" style="padding-left: 1em;text-align: center;font-size: 7px">${user.description!}</p>
                             </div>
                         </div>
                     </#if>
@@ -113,4 +112,11 @@ box-shadow: 0 1px 2px 0 rgba(0,0,0,0.1);">
             </a>
         </div>
     </div>
+</div>
+
+<div class="card" style="box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04); padding: 5px; backgroud-color: white">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+ <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+ <div id="aplayer" class="aplayer"  data-id="4884303316" data-server="netease" data-type="playlist" data-fixed="false" data-listfolded="true" data-order="list" data-theme="#F58EA8" style="width: 100%"></div>
+ <script src="https://unpkg.com/meting@1.2/dist/Meting.min.js"></script>
 </div>

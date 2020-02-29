@@ -47,7 +47,7 @@
             <div class="columns is-multiline"  id="view_${item.team}">
                 <#list item.photos as photo>
                     <div class="column is-one-quarter-desktop is-half-tablet">
-                        <div class="card" style="height: 100%">
+                        <div class="card" style="width: 100%">
                             <div class="card-image">
                                 <figure class="image">
                                     <a href="${photo.url}" class="show" >
