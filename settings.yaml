@@ -160,18 +160,8 @@ post:
           label: 开启
         - value: false
           label: 关闭
-#    code_pretty:
-#      name: code_pretty
-#      label: 文章代码高亮主题
-#      type: select
-#      default: light
-#      options:
-#        - value: Dark
-#          label: dark
-#        - value: light
-#          label: light
 social:
-  label: 社交设置
+  label: 博客信息
   items:
     social_github:
       name: social_github
@@ -208,6 +198,113 @@ social:
       label: Telegram
       type: text
       placeholder: 'Telegram 用户名'
+    social_beian:
+      name: social_beian
+      label: 备案号
+      type: text
+      placeholder: '备案号'
+    social_free:
+      name: social_free
+      label: 底部自定义
+      type: textarea
+      default: '<p style="text-align: center; line-height: 20px;margin: 0px 0px">
+                                    Thanks for <a href="https://halo.run/" target="_blank" rel="nofollow">Halo</a>&nbsp;&nbsp;&nbsp;&&nbsp;&nbsp;&nbsp;<a
+                                            href="//www.upyun.com" target="_blank" rel="nofollow"><img
+                                                src="//www.upyun.com/static/90X45.png" width="56" height="28" style="margin: -5px 0px"></a>
+                                </p>'
+
+plugins:
+  label: 插件
+  items:
+    music:
+      name: music
+      label: 音乐播放器
+      type: radio
+      data-type: bool
+      default: false
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+    music_id:
+      name: music_id
+      label: 外链音乐Id (如果已开启音乐播放器, 此项必填)
+      type: text
+      default: ''
+      placeholder: '外链音乐Id'
+    kanbanniang:
+      name: kanbanniang
+      label: 看板娘
+      type: radio
+      data-type: bool
+      default: false
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+    busuanzi:
+      name: busuanzi
+      label: 不蒜子计数
+      type: radio
+      data-type: bool
+      default: false
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+    bokejishi:
+      name: bokejishi
+      label: 博客计时
+      type: radio
+      data-type: bool
+      default: false
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+    time_start:
+      name: time_start
+      label: 开始时间 (如果已开启博客计时, 此项必填)
+      type: text
+      default: ''
+      placeholder: '形如2019-08-10 00:00:00格式'
+    caidai:
+      name: caidai
+      label: 背景彩带
+      type: radio
+      data-type: bool
+      default: false
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+    xiantiao:
+      name: xiantiao
+      label: 背景线条
+      type: radio
+      data-type: bool
+      default: false
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+    dianji:
+      name: dianji
+      label: 鼠标点击特效
+      type: radio
+      data-type: bool
+      default: false
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
 
 custom_links:
   label: 自定义链接
@@ -233,3 +330,5 @@ custom_links:
                         <i class="fab fa-creative-commons-by title is-4"></i>
                     </a>
                 </p>'
+
+

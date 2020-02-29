@@ -10,6 +10,17 @@
                 <#if settings.sidebar_profile!true>
                     <#include "../widget/profile.ftl">
                 </#if>
+                <#if settings.music!true>
+                    <div class="card"
+                               style="box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04); padding: 5px; backgroud-color: white">
+                    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+                    <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+                    <div id="aplayer" class="aplayer" data-id="${settings.music_id!}" data-server="netease"
+                         data-type="playlist"
+                         data-fixed="false" data-listfolded="true" data-order="list" data-theme="#F58EA8" style="width: 100%"></div>
+                    <script src="https://unpkg.com/meting@1.2/dist/Meting.min.js"></script>
+                </div>
+                </#if>
                 <#if settings.sidebar_categories!true>
                     <#include "../widget/category.ftl">
                 </#if>
@@ -33,10 +44,6 @@
                 <#if settings.sidebar_recentcomment!true>
                     <#include "../widget/recent_comments.ftl">
                 </#if>
-            <#--        <#include "../widget/archive.ftl">-->
-<#--                <#if settings.sidebar_tags!true>-->
-<#--                    <#include "../widget/tag.ftl">-->
-<#--                </#if>-->
             </#if>
             <#if position == 'left'>
                 <div class="column-right-shadow is-hidden-widescreen is-6-fullhd ">

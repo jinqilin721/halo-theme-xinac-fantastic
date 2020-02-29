@@ -51,11 +51,13 @@
                     padding: 0;
                     vertical-align: unset;
                 }
+
                 .tag {
                     font-size: 1em !important;
                     padding-right: 0 !important;
                     padding-left: 0 !important;
                 }
+
                 .attr-name {
                     padding-left: 0.75em !important;
                 }
@@ -85,7 +87,9 @@
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.min.css">
         </#if>
 
-        <script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
+        <#if settings.kanbanniang!true>
+            <script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
+        </#if>
     </head>
     <body class="is-3-column">
     <@navbar 'page' />
@@ -134,7 +138,10 @@
                                                         <@categoryTag method="list">
                                                             <#list categories as category>
                                                                 <#if category_index <= 4>
-                                                                    <li><a href="${context!}/categories/${category.slugName!}" style="text-transform:capitalize">${category.name}</a></li>
+                                                                    <li>
+                                                                        <a href="${context!}/categories/${category.slugName!}"
+                                                                           style="text-transform:capitalize">${category.name}</a>
+                                                                    </li>
                                                                 </#if>
                                                             </#list>
                                                         </@categoryTag>

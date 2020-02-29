@@ -1,6 +1,7 @@
 <#include "layout/layout.ftl">
 <#include "layout/common/article.ftl">
-<@layout title="journals - ${options.blog_title!}" keywords="${options.seo_keywords!}" description="${options.seo_description!}" canonical="${context!}/journals">
+<@layout title="耳语 - ${options.blog_title!}" keywords="${options.seo_keywords!}" description="${options
+.seo_description!}" canonical="${context!}/journals">
     <div class="journals">
         <#include "layout/journals/journals.ftl"/>
     </div>
