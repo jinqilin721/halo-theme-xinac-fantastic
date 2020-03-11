@@ -17,7 +17,7 @@
                     </#if>
                     <div class="media-content">
                         <div class="content">
-                            <div><time class="has-text-grey is-size-7 is-uppercase" datetime="${post.createTime!}">${post.createTime?string["EEE MMM d"]}</time></div>
+                            <div><time class="has-text-grey is-size-7 is-uppercase" datetime="${post.createTime!}">${post.createTime?string["yyyy-MM-dd EE"]}</time></div>
                             <a href="${context!}/archives/${post.url!}" class="title has-link-black-ter is-size-6 has-text-weight-normal">${post.title!}</a>
                         </div>
                     </div>

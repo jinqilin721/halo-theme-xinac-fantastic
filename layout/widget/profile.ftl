@@ -3,7 +3,7 @@
         <nav class="level">
             <div class="level-item has-text-centered" style="flex-shrink: 1">
                 <div class="level">
-                    <figure class="image is-64x64 has-mb-6 level-left" style="margin: 0 auto">
+                    <figure class="image is-96x96 has-mb-6 level-left" style="margin: 0 auto">
                         <img class="is-rounded"
                              src="${user.avatar!}" alt="${user.nickname!}" style="padding: 2px;
 box-shadow: 0 1px 2px 0 rgba(0,0,0,0.1);">
@@ -61,6 +61,11 @@ box-shadow: 0 1px 2px 0 rgba(0,0,0,0.1);">
                 </div>
             </div>
         </nav>
+        <#if settings.profile_follow_url?? && settings.profile_follow_url!=''>
+            <div class="level">
+                <a class="level-item button is-link is-rounded" style="background-color: #3273dc !important; border-color: transparent !important; color: #fff !important;" href="${settings.profile_follow_url!'${context!}'}" target="_blank">关注我</a>
+            </div>
+        </#if>
         <#--        <div class="level">-->
         <#--            <a class="level-item button is-link is-rounded" href="${settings.profile_follow_url!'${context!}'}"-->
         <#--               target="_blank">关注我</a>-->
@@ -108,7 +113,7 @@ box-shadow: 0 1px 2px 0 rgba(0,0,0,0.1);">
                     <i class="fab fa-telegram"></i>
                 </a>
             </#if>
-            <a class="level-item button  is-marginless" target="_blank" title="RSS" href="${context!}/atom.xml">
+            <a class="level-item button  is-marginless" target="_blank" title="RSS" href="${context!}/atom">
                 <i class="fas fa-rss"></i>
             </a>
         </div>

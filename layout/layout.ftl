@@ -25,7 +25,7 @@
 
         <link rel="canonical" href="${canonical!}"/>
 
-        <link rel="alternative" href="${context!}/atom.xml" title="${options.blog_title!}" type="application/atom+xml">
+        <link rel="alternative" href="${context!}/atom" title="${options.blog_title!}" type="application/atom+xml">
 
         <@global.head />
 
@@ -66,11 +66,9 @@
 
         <#if is_post?? || is_sheet?? || is_journal??>
             <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
-            <link rel="stylesheet"
-                  href="//cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+            <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
         </#if>
-        <link rel="stylesheet"
-              href="//cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
         <script src="//cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
 
         <link rel="stylesheet" href="${static!}/source/css/style.css">
@@ -78,8 +76,7 @@
         <link rel="stylesheet" href="${static!}/source/css/back-to-top.css">
         <#include "./plugin/style.theme.ftl">
         <#if post?? || journals??>
-            <link rel="stylesheet" type="text/css"
-                  href="${static!}/source/lib/prism/css/prism-Tomorrow Night.css"/>
+            <link rel="stylesheet" type="text/css" href="${static!}/source/lib/prism/css/prism-${settings.code_pretty!'Default'}.css"/>
             <script type="text/javascript" src="${static!}/source/lib/prism/js/prism.js"></script>
         </#if>
         <#if is_index??>
@@ -117,7 +114,7 @@
                                  style="margin-left: 10px">
                                 <div class="columns">
                                     <div class="column is-12-tablet is-12-desktop is-12-widescreen has-order-2 column-main">
-                                        <#--         判断是否已经有置顶文章-->
+                                        <#--判断是否已经有置顶文章-->
                                         <#list posts.content as post>
                                             <#if post.topPriority == 1>
                                                 <#assign isTop = 'yes'>
@@ -126,7 +123,7 @@
                                         </#list>
                                         <#if isTop??>
                                             <div class="level">
-                                                <#--                                        <#include "./common/widget_pin.ftl">-->
+                                                <#--<#include "./common/widget_pin.ftl">-->
                                                 <@module 'slider' />
                                             </div>
                                         </#if>

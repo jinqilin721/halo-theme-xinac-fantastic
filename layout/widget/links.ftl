@@ -7,7 +7,7 @@
                     链接
                 </h3>
                 <ul class="menu-list">
-                    <#list links as link>
+                    <#list links?sort_by("priority") as link>
                         <li>
                             <a class="level is-mobile" href="${link.url!}" target="_blank">
                                 <span class="level-left">

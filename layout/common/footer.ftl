@@ -2,17 +2,16 @@
     <div class="container">
         <div class="level">
             <div class="level-start has-text-centered-mobile">
-                &nbsp;&nbsp;&nbsp;<@global.footer />
                 <#if settings.busuanzi!true>
-                    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-                    <br>
-                    <span id="busuanzi_container_site_pv" style='display:none'>&nbsp;&nbsp;&nbsp; 总访问量 <span
-                                id="busuanzi_value_site_pv"></span> 次 </span>
-                    <span id="busuanzi_container_site_uv" style='display:none'>| 总访客数 <span
-                                id="busuanzi_value_site_uv"></span> 人 </span>
+                    <p style="text-align: left; line-height: 20px; margin: 0">
+                        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+                        <br>
+                        <span id="busuanzi_container_site_pv" style='display:none'>总访问量 <span id="busuanzi_value_site_pv"></span> 次 </span>
+                        <span id="busuanzi_container_site_uv" style='display:none'>| 总访客数 <span id="busuanzi_value_site_uv"></span> 人 </span>
+                    </p>
                 </#if>
                 <#if settings.bokejishi!true>
-                    <p style="text-align: center; line-height: 20px;margin: 0">
+                    <p style="text-align: left; line-height: 20px;margin: 0">
                         我的博客已经运行&nbsp;&nbsp;<span id="clock"></span>&nbsp;&nbsp;啦！<br>
                     </p>
                     <script type="text/javascript">
@@ -46,16 +45,19 @@
                     </script>
                 </#if>
                 <#if settings.social_beian?? && settings.social_beian!=''>
-                    <p style="text-align: center; line-height: 20px;margin: 0">
-                        <a href="http://beian.miit.gov.cn/"
-                           style="color: black;font-style: inherit;font-weight: inherit;">${settings.social_beian!}</a>
+                    <p style="text-align: left; line-height: 20px;margin: 0">
+                        <a href="http://beian.miit.gov.cn/" style="color: black;font-style: inherit;font-weight: inherit;">
+                            ${settings.social_beian!}
+                        </a>
                     </p>
                 </#if>
                 <#if settings.social_free?? && settings.social_free!=''>
-                    ${settings.social_free!}
+                    <p style="text-align: left; line-height: 20px; margin: 0">
+                        &copy; ${.now?string('yyyy')} ${user.nickname!}&nbsp;${settings.social_free!}
+                    </p>
                 </#if>
                 <#if settings.caidai!true>
-                    <script src="https://www.lwjppz.cn/upload/2020/2/caidai-5e8e10ce0efc4886838a9ea8c5e1153a.js"></script>
+                    <script src="${static!}/source/lib/caidai.js?date=${.now?string('yyyyMM')}"></script>
                 </#if>
                 <#if settings.xiantiao!true>
                     <script type="text/javascript"
@@ -64,9 +66,10 @@
                     </script>
                 </#if>
                 <#if settings.dianji!true>
-                    <script src="https://www.lwjppz.cn/upload/2020/2/dianji-1a07321c18b640deafcb13f4cb635307.js"></script>
+                    <script src="${static!}/source/lib/dianji.js?date=${.now?string('yyyyMM')}"></script>
                 </#if>
                 </p>
+                <@global.footer />
             </div>
             <div class="level-end">
                 <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">

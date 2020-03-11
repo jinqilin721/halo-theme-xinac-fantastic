@@ -238,6 +238,7 @@ img.thumbnail {
 }
 .article .content {
   font-size: 1.1rem;
+  word-break: break-word;
 }
 .article .content blockquote.pullquote {
   float: right;
@@ -247,6 +248,7 @@ img.thumbnail {
 }
 .article .content a {
   word-wrap: break-word;
+  word-break: break-word;
 }
 .article .content p {
   line-height: 1.9rem;
@@ -566,6 +568,7 @@ video {
 }
 .post-article {
   word-wrap: break-word;
+  word-break: break-word;
   line-height: 1.8;
   letter-spacing: 0.013rem;
 }
@@ -628,6 +631,10 @@ p {
 
 .widget .media + .media {
   margin-bottom: 0
+}
+
+.timeline .media {
+  margin-bottom: 20px !important;
 }
 
 .media+.media {

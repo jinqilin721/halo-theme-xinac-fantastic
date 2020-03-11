@@ -32,7 +32,7 @@
                     return result;
                 },
                 createPostDirectory = function (article, directory, isDirNum) {
-                    console.log("aaa",article,directory,isDirNum);
+                    // console.log("aaa",article,directory,isDirNum);
                     var contentArr = [],
                         titleId = [],
                         levelArr, root, level,
@@ -135,7 +135,7 @@
         var offsetLength = dir.offset().top
         $(document).scroll(function() {
             var distance = offsetLength - $(window).scrollTop();
-            console.log(distance)
+            // console.log(distance)
             // console.log(allpostdiv)
             if (distance <= 0) {
                 if (!dir.hasClass('directory-fixed')) {
@@ -176,7 +176,7 @@
         var offsetLength = dir.offset().top
         $(document).scroll(function () {
             var distance = offsetLength - $(window).scrollTop();
-            console.log(distance)
+            // console.log(distance)
             // console.log(allpostdiv)
             if (distance <= 0) {
                 if (!dir.hasClass('directory-fixed')) {

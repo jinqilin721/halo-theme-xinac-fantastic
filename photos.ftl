@@ -21,7 +21,7 @@
 
     <link rel="canonical" href="${canonical!}"/>
 
-    <link rel="alternative" href="${context!}/atom.xml" title="${options.blog_title!}" type="application/atom+xml">
+    <link rel="alternative" href="${context!}/atom" title="${options.blog_title!}" type="application/atom+xml">
 
     <@global.head />
 
