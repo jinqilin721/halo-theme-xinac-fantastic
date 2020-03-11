@@ -1,6 +1,19 @@
+感谢分享如此优秀的主题！<br>
+有点强迫症，在 https://github.com/Bursteretion/halo-theme-fantastic 主题的基础上做了一点点优化：
+> 1、全部日期样式改为：yyyy-MM-dd EE <br>
+> 2、首页和文章详情页增加了评论量、浏览量、标签，页脚显示靠左 <br>
+> 3、主题设置增加 关注我和文章代码主题 <br>
+> 4、友链按排序显示 <br>
+> 5、摘要如果有代码时，样式会有问题，增加 word-break: break-word;<br>
+
+## 网址：http://blog.xinac.cn/ 内容正在建设中。 
+
+
+
+
 在原来主题的基础上增加了日志页面, 增加了自定义插件功能
 
-## 预览地址
+## 原预览地址
 
 [访问](https://www.lwjppz.cn/)
 
@@ -20,6 +33,6 @@
 
 ## 使用方法
 
-1. 克隆或者[下载](https://codeload.github.com/imkundev/halo-theme-fantastic/zip/master)。
-2. 压缩为 zip 压缩包之后在后台的主题设置直接上传即可使用。
-3. 用Halo自还的程序拉取 `https://github.com/Bursteretion/halo-theme-fantastic.git`
+1. 克隆或者下载
+2. 压缩为 zip 压缩包之后在后台的主题设置直接上传即可使用
+3. 用Halo自还的程序拉取 `https://github.com/jinqilin721/halo-theme-fantastic.git`
