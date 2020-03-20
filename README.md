@@ -5,8 +5,9 @@
 > 3、主题设置增加 关注我和文章代码主题 <br>
 > 4、友链按排序显示 <br>
 > 5、摘要如果有代码时，样式会有问题，增加 word-break: break-word;<br>
+> 6、页面优化更加细致，新增CDN优选功能，可自行配置CDN网址
 
-## 网址：http://blog.xinac.cn/ 内容正在建设中。 
+## 网址：https://blog.xinac.cn/ 内容正在建设中。 
 
 
 
