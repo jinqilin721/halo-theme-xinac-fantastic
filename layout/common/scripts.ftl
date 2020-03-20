@@ -1,17 +1,14 @@
-<#--<script src="//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>-->
-<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script src="${settings.cdn_jquery_js!}"></script>
 <#include "../plugin/gallery.ftl">
 <#include "../plugin/outdated-browser.ftl">
 <#include "../plugin/mathjax.ftl">
 <#include "../plugin/back-to-top.ftl">
-
 
 <script src="${static!}/source/js/bundle.js"></script>
 <#if is_index??>
     <script src="${static!}/source/js/widget_pin.js"></script>
 </#if>
 <#if is_post??>
-
     <script src="${static!}/source/lib/toc/toc.min.js"></script>
     <script>
         new Toc({
@@ -36,6 +33,4 @@
     if (!urlstatus) {
         $(".navbar-start a").eq(0).addClass('is-active');
     }
-
-
 </script>

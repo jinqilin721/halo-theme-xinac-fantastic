@@ -12,8 +12,8 @@
                         </a>
                     <#else>
                         <span class="image is-7by1">
-                    <img class="thumbnail" src="${post.thumbnail!}" alt="${post.title!}">
-                </span>
+                            <img class="thumbnail" src="${post.thumbnail!}" alt="${post.title!}">
+                        </span>
                     </#if>
                 </div>
             </#if>
@@ -117,7 +117,7 @@
             </#if>
         </div>
     </div>
-    <#if !index>
+    <#if !index && !is_sheet??>
         <div class="card" style="font-size: 20px; line-height: 1.5em; padding: 5px; color: black; background-color: rgba(255, 255, 255, 0.7); border-left: 3px solid skyblue;">
             <div class="card-content">
                 <p style="font-size: 15px;">

@@ -16,8 +16,7 @@
                         <div class="blog-slider__item swiper-slide">
                             <div class="blog-slider__img">
                                 <a href="${context!}/archives/${post.url!}">
-                                    <img src="${post.thumbnail!}"
-                                         alt="${post.title!}">
+                                    <img src="${post.thumbnail!}" alt="${post.title!}">
                                 </a>
                             </div>
                             <div class="blog-slider__content">
@@ -34,7 +33,7 @@
         </div>
 
         <!-- partial -->
-        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
-        <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js'></script>
+        <script src='${settings.cdn_jquery_js!}'></script>
+        <script src='${settings.cdn_swiper_js!}'></script>
     </#if>
 </#macro>

@@ -29,9 +29,9 @@
 
         <@global.head />
 
-        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/bulma@0.7.5/css/bulma.min.css">
-        <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.4.1/css/all.css">
-        <link href="https://fonts.googleapis.com/css?family=Fira+Sans&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="${settings.cdn_bulma_css!}">
+        <link rel="stylesheet" href="${settings.cdn_fontawesome_css!}">
+        <link href="${settings.cdn_google_fonts!}/css?family=Fira+Sans&display=swap" rel="stylesheet">
         <style>
             body > .footer,
             body > .navbar,
@@ -65,11 +65,11 @@
         </#if>
 
         <#if is_post?? || is_sheet?? || is_journal??>
-            <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
-            <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+            <link rel="stylesheet" href="${settings.cdn_lightgallery_css!}">
+            <link rel="stylesheet" href="${settings.cdn_justifiedGallery_css!}">
         </#if>
-        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
-        <script src="//cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+        <link rel="stylesheet" href="${settings.cdn_outdatedbrowser_css!}">
+        <script src="${settings.cdn_pace_js!}"></script>
 
         <link rel="stylesheet" href="${static!}/source/css/style.css">
         <link rel="stylesheet" href="${static!}/source/css/bundle.css">
@@ -81,7 +81,7 @@
         </#if>
         <#if is_index??>
             <link rel="stylesheet" href="${static!}/source/css/widget_pin.css">
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.min.css">
+            <link rel="stylesheet" href="${settings.cdn_swiper_css!}">
         </#if>
 
         <#if settings.kanbanniang!true>
@@ -93,7 +93,7 @@
     <div class="card-normal">
         <section class="section">
             <div class="container">
-                <div class="columns">
+                <div class="columns"><#--<#if is_sheet??>is-centered</#if>-->
                     <#if post?? >
                         <#if is_post??>
                             <#if settings.share_type !=''>
@@ -104,9 +104,10 @@
                             </div>
                             <@widget 'right' />
                         <#elseif is_sheet??>
-                            <div class="column is-12-tablet is-12-desktop is-12-widescreen is-12-fullhd has-order-2 column-main">
+                            <div class="column is-12-tablet is-9-desktop is-9-widescreen is-9-fullhd has-order-3 column-main">
                                 <#nested />
                             </div>
+                            <@widget 'right' />
                         </#if>
                     <#else >
                         <#if is_index??>

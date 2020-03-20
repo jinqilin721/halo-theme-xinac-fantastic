@@ -1,9 +1,17 @@
 var swiper = new Swiper('.blog-slider', {
-      spaceBetween: 30,
-      effect: 'fade',
-      // autoHeight: true,
-      pagination: {
+    autoplay: {
+        delay: 3000,
+        stopOnLastSlide: false,
+        disableOnInteraction: true,
+    },
+    spaceBetween: 30,
+    effect: 'fade',
+    mousewheel: {
+        invert: false,
+    },
+    // autoHeight: true,
+    pagination: {
         el: '.blog-slider__pagination',
         clickable: true,
-      }
-    });
+    }
+});

@@ -5,8 +5,8 @@
         </a>
     </#if>
 </div>
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css">
-<script src="//cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script>
+<link rel="stylesheet" href="${settings.cdn_share_css!}">
+<script src="${settings.cdn_share_js!}"></script>
 <style>
     <#if is_post??>
     .social-share a {

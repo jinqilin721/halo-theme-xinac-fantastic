@@ -4,13 +4,13 @@
             my browser now </a></p>
     <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
 </div>
-<script src="//cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer>
+<script src="${settings.cdn_outdatedbrowser_js!}" defer></script>
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         outdatedBrowser({
             bgColor: '#f25648',
             color: '#ffffff',
-            lowerThan: 'flex'
+            lowerThan: 'object-fit' // display on IE11 or below
         });
     });
 </script>

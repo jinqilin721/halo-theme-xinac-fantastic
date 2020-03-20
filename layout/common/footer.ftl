@@ -4,7 +4,7 @@
             <div class="level-start has-text-centered-mobile">
                 <#if settings.busuanzi!true>
                     <p style="text-align: left; line-height: 20px; margin: 0">
-                        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+                        <script async src="${settings.cdn_busuanzi_js!}"></script>
                         <br>
                         <span id="busuanzi_container_site_pv" style='display:none'>总访问量 <span id="busuanzi_value_site_pv"></span> 次 </span>
                         <span id="busuanzi_container_site_uv" style='display:none'>| 总访客数 <span id="busuanzi_value_site_uv"></span> 人 </span>
@@ -46,7 +46,7 @@
                 </#if>
                 <#if settings.social_beian?? && settings.social_beian!=''>
                     <p style="text-align: left; line-height: 20px;margin: 0">
-                        <a href="http://beian.miit.gov.cn/" style="color: black;font-style: inherit;font-weight: inherit;">
+                        <a target="_blank" href="http://beian.miit.gov.cn/" style="color: black;font-style: inherit;font-weight: inherit;">
                             ${settings.social_beian!}
                         </a>
                     </p>
@@ -57,18 +57,17 @@
                     </p>
                 </#if>
                 <#if settings.caidai!true>
-                    <script src="${static!}/source/lib/caidai.js?date=${.now?string('yyyyMM')}"></script>
+                    <script src="${static!}/source/lib/caidai.js"></script>
                 </#if>
                 <#if settings.xiantiao!true>
                     <script type="text/javascript"
                             color="47,135,193" opacity='0.8' zIndex="-2" count="100"
-                            src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+                            src="${settings.cdn_canvas_nest_js!}">
                     </script>
                 </#if>
                 <#if settings.dianji!true>
-                    <script src="${static!}/source/lib/dianji.js?date=${.now?string('yyyyMM')}"></script>
+                    <script src="${static!}/source/lib/dianji.js"></script>
                 </#if>
-                </p>
                 <@global.footer />
             </div>
             <div class="level-end">

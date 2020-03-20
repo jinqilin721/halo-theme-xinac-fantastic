@@ -1,8 +1,7 @@
 <div>
     <div id="toc"></div>
 </div>
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="${settings.cdn_jquery_js!}"></script>
 <script>
     // initToc()
     // function initToc() {
@@ -103,7 +102,7 @@
             createPostDirectory(document.getElementById('post-article'), document.getElementById('toc'), false);
         };
 
-//建立关联关系
+        //建立关联关系
         function initRelationship() {
             var win = $(window);
             var anchors = $('#toc').find('a');
@@ -123,12 +122,10 @@
                     }
                 })
             })
-
         }
 
         postDirectoryBuild();
         initRelationship();
-
 
         var dir = $("#toc");
         var postdiv = $(".article-content");
@@ -168,8 +165,8 @@
                 }
             })
         })
-
     }
+
     function tocFixed() {
         var dir = $("#toc");
         var postdiv = $(".article-content");
@@ -189,7 +186,6 @@
             }
         });
     }
-
 </script>
 <style>
     #toc {
@@ -221,7 +217,6 @@
         width: 3px;
         opacity: .2;
         z-index: 1;
-
     }
 
     #toc li, #toc ul {
@@ -234,7 +229,6 @@
     #toc > ul {
         position: relative;
     }
-
 
     #toc > ul li::before {
         position: relative;
@@ -277,7 +271,6 @@
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
-
     }
 
     #toc ul li ul li a {
@@ -300,8 +293,6 @@
         white-space: nowrap;
         width: 200px;
     }
-
-
 
     .directory-fixed {
         position: fixed;
