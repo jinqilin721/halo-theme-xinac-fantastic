@@ -1,3 +1,7 @@
+当前主题已支持 Halo v1.3.0版本，Halo 1.2.0及以下版本请使用 1.2.0 版本主题。
+
+---
+
 感谢分享如此优秀的主题！<br>
 有点强迫症，在 https://github.com/Bursteretion/halo-theme-fantastic 主题的基础上做了一点点优化：
 
