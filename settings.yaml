@@ -195,6 +195,28 @@ post:
 #          label: dark
 #        - value: light
 #          label: light
+    comment_enable:
+      name: comment_enable
+      label: 显示评论
+      type: radio
+      data-type: bool
+      default: true
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+    post_thumbnail_enable:
+      name: post_thumbnail_enable
+      label: 显示文章封面图
+      type: radio
+      data-type: bool
+      default: true
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
 social:
   label: 博客信息
   items:
@@ -242,11 +264,7 @@ social:
       name: social_free
       label: 底部自定义
       type: textarea
-      default: '<p style="text-align: center; line-height: 20px;margin: 0px 0px">
-                                    Thanks for <a href="https://halo.run/" target="_blank" rel="nofollow">Halo</a>&nbsp;&nbsp;&nbsp;&&nbsp;&nbsp;&nbsp;<a
-                                            href="//www.upyun.com" target="_blank" rel="nofollow"><img
-                                                src="//www.upyun.com/static/90X45.png" width="56" height="28" style="margin: -5px 0px"></a>
-                                </p>'
+      default: '，Powered by <a href="https://github.com/halo-dev/halo" target="_blank">Halo</a> & <a href="https://github.com/jinqilin721/halo-theme-fantastic" target="_blank">xinac-fantastic</a>'
 
 plugins:
   label: 插件
@@ -266,7 +284,7 @@ plugins:
       name: music_id
       label: 外链音乐Id (如果已开启音乐播放器, 此项必填)
       type: text
-      default: ''
+      default: '379014204'
       placeholder: '外链音乐Id'
     kanbanniang:
       name: kanbanniang
@@ -305,7 +323,7 @@ plugins:
       name: time_start
       label: 开始时间 (如果已开启博客计时, 此项必填)
       type: text
-      default: ''
+      default: '2020-01-01 00:00:00'
       placeholder: '形如2019-08-10 00:00:00格式'
     caidai:
       name: caidai
@@ -348,9 +366,7 @@ custom_links:
       name: links_top
       label: 顶部链接
       type: textarea
-      default: '<a class="navbar-item" target="_blank" title="Download on GitHub" href="https://github.com/halo-dev/halo-theme-icarus">
-                    <i class="fab fa-github"></i>
-                </a>'
+      default: ''
     links_footer:
       name: links_footer
       label: 底部链接

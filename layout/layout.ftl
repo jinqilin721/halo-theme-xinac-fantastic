@@ -1,4 +1,4 @@
-<#macro layout title,keywords,description,canonical>
+<#macro layout title,canonical>
     <#include "common/navbar.ftl">
     <#include "common/widget.ftl">
     <#include "common/module.ftl">
@@ -9,23 +9,23 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
         <title>${title!}</title>
 
-        <meta name="keywords" content="${keywords!}"/>
-        <meta name="description" content="${description!}">
+        <meta name="keywords" content="${meta_keywords!}"/>
+        <meta name="description" content="${meta_description!}">
         <meta property="og:type" content="website">
         <meta property="og:title" content="${title!}">
         <meta property="og:url" content="${canonical}">
         <meta property="og:site_name" content="${title!}">
-        <meta property="og:description" content="${description!}">
+        <meta property="og:description" content="${meta_description!}">
         <meta property="og:locale" content="zh">
         <meta property="og:image" content="${user.avatar!}">
         <meta name="twitter:card" content="summary">
         <meta name="twitter:title" content="${title!}">
-        <meta name="twitter:description" content="${description!}">
+        <meta name="twitter:description" content="${meta_description!}">
         <meta name="twitter:image" content="${user.avatar!}">
 
         <link rel="canonical" href="${canonical!}"/>
 
-        <link rel="alternative" href="${context!}/atom" title="${options.blog_title!}" type="application/atom+xml">
+        <link rel="alternative" href="${atom_url!}" title="${blog_title!}" type="application/atom+xml">
 
         <@global.head />
 
@@ -71,16 +71,16 @@
         <link rel="stylesheet" href="${settings.cdn_outdatedbrowser_css!}">
         <script src="${settings.cdn_pace_js!}"></script>
 
-        <link rel="stylesheet" href="${static!}/source/css/style.css">
-        <link rel="stylesheet" href="${static!}/source/css/bundle.css">
-        <link rel="stylesheet" href="${static!}/source/css/back-to-top.css">
+        <link rel="stylesheet" href="${theme_base!}/source/css/style.css">
+        <link rel="stylesheet" href="${theme_base!}/source/css/bundle.css">
+        <link rel="stylesheet" href="${theme_base!}/source/css/back-to-top.css">
         <#include "./plugin/style.theme.ftl">
         <#if post?? || journals??>
-            <link rel="stylesheet" type="text/css" href="${static!}/source/lib/prism/css/prism-${settings.code_pretty!'Default'}.css"/>
-            <script type="text/javascript" src="${static!}/source/lib/prism/js/prism.js"></script>
+            <link rel="stylesheet" type="text/css" href="${theme_base!}/source/lib/prism/css/prism-${settings.code_pretty!'Default'}.css"/>
+            <script type="text/javascript" src="${theme_base!}/source/lib/prism/js/prism.js"></script>
         </#if>
         <#if is_index??>
-            <link rel="stylesheet" href="${static!}/source/css/widget_pin.css">
+            <link rel="stylesheet" href="${theme_base!}/source/css/widget_pin.css">
             <link rel="stylesheet" href="${settings.cdn_swiper_css!}">
         </#if>
 
@@ -137,8 +137,8 @@
                                                             <#list categories as category>
                                                                 <#if category_index <= 4>
                                                                     <li>
-                                                                        <a href="${context!}/categories/${category.slugName!}"
-                                                                           style="text-transform:capitalize">${category.name}</a>
+                                                                        <a href="${category.fullPath!}"
+                                                                           style="text-transform:capitalize">${category.name!}</a>
                                                                     </li>
                                                                 </#if>
                                                             </#list>

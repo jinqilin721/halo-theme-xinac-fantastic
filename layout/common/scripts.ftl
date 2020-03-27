@@ -4,12 +4,12 @@
 <#include "../plugin/mathjax.ftl">
 <#include "../plugin/back-to-top.ftl">
 
-<script src="${static!}/source/js/bundle.js"></script>
+<script src="${theme_base!}/source/js/bundle.js"></script>
 <#if is_index??>
-    <script src="${static!}/source/js/widget_pin.js"></script>
+    <script src="${theme_base!}/source/js/widget_pin.js"></script>
 </#if>
 <#if is_post??>
-    <script src="${static!}/source/lib/toc/toc.min.js"></script>
+    <script src="${theme_base!}/source/lib/toc/toc.min.js"></script>
     <script>
         new Toc({
             wrapperId: 'post-article',

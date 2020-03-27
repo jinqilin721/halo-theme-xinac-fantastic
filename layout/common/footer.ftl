@@ -53,11 +53,11 @@
                 </#if>
                 <#if settings.social_free?? && settings.social_free!=''>
                     <p style="text-align: left; line-height: 20px; margin: 0">
-                        &copy; ${.now?string('yyyy')} ${user.nickname!}&nbsp;${settings.social_free!}
+                        &copy; ${.now?string('yyyy')} ${user.nickname!}&nbsp;${settings.social_free!}&nbsp;&nbsp;v${version!}
                     </p>
                 </#if>
                 <#if settings.caidai!true>
-                    <script src="${static!}/source/lib/caidai.js"></script>
+                    <script src="${theme_base!}/source/lib/caidai.js"></script>
                 </#if>
                 <#if settings.xiantiao!true>
                     <script type="text/javascript"
@@ -66,7 +66,7 @@
                     </script>
                 </#if>
                 <#if settings.dianji!true>
-                    <script src="${static!}/source/lib/dianji.js"></script>
+                    <script src="${theme_base!}/source/lib/dianji.js"></script>
                 </#if>
                 <@global.footer />
             </div>

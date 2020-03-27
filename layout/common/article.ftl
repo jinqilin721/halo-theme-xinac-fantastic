@@ -4,10 +4,10 @@
     <div class="card" <#if is_post??>style="display: block"</#if> >
         <#if is_post?? || is_page?? || is_sheet??>
         <#else >
-            <#if post.thumbnail?? && post.thumbnail!=''>
+            <#if post.thumbnail?? && post.thumbnail!='' && (settings.post_thumbnail_enable?? && settings.post_thumbnail_enable)>
                 <div class="card-image">
                     <#if index>
-                        <a href="${context!}/archives/${post.url!}">
+                        <a href="${post.fullPath!}">
                             <img class="thumbnail" src="${post.thumbnail!}" alt="${post.title!}">
                         </a>
                     <#else>
@@ -28,7 +28,7 @@
                             <div class="level-item">
                                 <#list post.categories as category>
                                     <a class="has-link-grey -link"
-                                       href="${context!}/categories/${category.slugName!}">${category.name!}</a>&nbsp;
+                                       href="${category.fullPath!}">${category.name!}</a>&nbsp;
                                 </#list>
                             </div>
                         </#if>
@@ -37,7 +37,7 @@
                             <div class="level-item">
                                 <#list categories as category>
                                     <a class="has-link-grey -link"
-                                       href="${context!}/categories/${category.slugName!}">${category.name!}</a>&nbsp;
+                                       href="${category.fullPath!}">${category.name!}</a>&nbsp;
                                 </#list>
                             </div>
                         </#if>
@@ -53,7 +53,7 @@
             <#if is_post??>
                 <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
                     <#if index>
-                        <a class="has-link-black-ter" href="${context!}/archives/${post.url!}">${post.title!}</a>
+                        <a class="has-link-black-ter" href="${post.fullPath!}">${post.title!}</a>
                     <#else>
                         ${post.title!}
                     </#if>
@@ -61,7 +61,7 @@
             <#else>
                 <h1 class="title is-size-5 is-size-5-mobile has-text-weight-normal">
                     <#if index>
-                        <a class="has-link-black-ter" href="${context!}/archives/${post.url!}">${post.title!}</a>
+                        <a class="has-link-black-ter" href="${post.fullPath!}">${post.title!}</a>
                     <#else>
                         ${post.title!}
                     </#if>
@@ -82,7 +82,7 @@
                             <div class="level-item">
                                 <span class="is-size-6 has-text-grey has-mr-7">#</span>
                                 <#list tags as tag>
-                                    <a class="has-link-grey -link" style="margin-left: 10px;" href="${context!}/tags/${tag.slugName!}">${tag.name!}</a>&nbsp;
+                                    <a class="has-link-grey -link" style="margin-left: 10px;" href="${tag.fullPath!}">${tag.name!}</a>&nbsp;
                                 </#list>
                             </div>
                         </#if>
@@ -101,7 +101,7 @@
                             <div class="level-item">
                                 <span class="is-size-6 has-text-grey has-mr-7">#</span>
                                 <#list post.tags as tag>
-                                    <a class="has-link-grey -link" style="margin-left: 10px;" href="${context!}/tags/${tag.slugName!}">${tag.name!}</a>&nbsp;
+                                    <a class="has-link-grey -link" style="margin-left: 10px;" href="${tag.fullPath!}">${tag.name!}</a>&nbsp;
                                 </#list>
                             </div>
                         </#if>
@@ -109,7 +109,7 @@
                     <#if post.summary?? && post.summary!=''>
                         <div class="level-end">
                             <div class="level-item">
-                                <a class="button is-size-7 is-light" target="_blank" href="${context!}/archives/${post.url!}#more">阅读更多</a>
+                                <a class="button is-size-7 is-light" target="_blank" href="${post.fullPath!}#more">阅读更多</a>
                             </div>
                         </div>
                     </#if>
@@ -124,7 +124,7 @@
                     本文由 <a target="_blank" href="${context!}">${user.nickname!}</a> 创作，如果您觉得本文不错，请随意赞赏<br>
                     采用 <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/" rel="external nofollow">知识共享署名4.0</a> 国际许可协议进行许可<br>
                     本站文章除注明转载/出处外，均为本站原创或翻译，转载前请务必署名<br>
-                    原文链接：<a target="_blank" href="${context!}/archives/${post.url!}">${context!}/archives/${post.url!}</a><br>
+                    原文链接：<a target="_blank" href="${post.fullPath!}">${post.fullPath!}</a><br>
                     最后更新：${post.editTime?string('yyyy-MM-dd HH:mm:ss')}
                 </p>
             </div>
@@ -149,14 +149,14 @@
         </#if>
     </#if>
 
-    <#if !index && (nextPost?? || prePost??)>
+    <#if !index && (nextPost?? || prevPost??)>
         <div class="card card-transparent">
             <div class="level post-navigation is-flex-wrap is-mobile">
                 <div class="level-start">
-                    <#if prePost??>
-                        <a class="level level-item has-link-grey article-nav-prev" href="${context!}/archives/${prePost.url!}">
+                    <#if prevPost??>
+                        <a class="level level-item has-link-grey article-nav-prev" href="${prevPost.fullPath!}">
                             <i class="level-item fas fa-chevron-left"></i>
-                            <span class="level-item">${prePost.title!}</span>
+                            <span class="level-item">${prevPost.title!}</span>
                         </a>
                     <#else>
                         <a class="level level-item has-link-grey article-nav-prev" href="${context!}/">
@@ -167,7 +167,7 @@
                 </div>
                 <div class="level-end">
                     <#if nextPost??>
-                        <a class="level level-item has-link-grey article-nav-next" href="${context!}/archives/${nextPost.url!}">
+                        <a class="level level-item has-link-grey article-nav-next" href="${nextPost.fullPath!}">
                             <span class="level-item">${nextPost.title!}</span>
                             <i class="level-item fas fa-chevron-right"></i>
                         </a>
@@ -182,7 +182,7 @@
         </div>
     </#if>
 
-    <#if !index>
+    <#if !index && settings.comment_enable?? && settings.comment_enable>
         <div class="card" id="comment-wrapper">
             <div class="card-content">
                 <h3 class="title is-5 has-text-weight-normal">评论</h3>
