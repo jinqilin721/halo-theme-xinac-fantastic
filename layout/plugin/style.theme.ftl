@@ -224,7 +224,7 @@
 
     code {
         color: var(--color);
-        background-color: var(--code-bg-color)
+        /*background-color: var(--code-bg-color)*/
     }
 
     code[class*="language-"],

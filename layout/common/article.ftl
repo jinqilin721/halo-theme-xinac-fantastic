@@ -109,7 +109,7 @@
                     <#if post.summary?? && post.summary!=''>
                         <div class="level-end">
                             <div class="level-item">
-                                <a class="button is-size-7 is-light" href="${context!}/archives/${post.url!}#more">阅读更多</a>
+                                <a class="button is-size-7 is-light" target="_blank" href="${context!}/archives/${post.url!}#more">阅读更多</a>
                             </div>
                         </div>
                     </#if>
@@ -149,27 +149,35 @@
         </#if>
     </#if>
 
-    <#if !index && nextPost?? && prePost??>
+    <#if !index && (nextPost?? || prePost??)>
         <div class="card card-transparent">
             <div class="level post-navigation is-flex-wrap is-mobile">
-                <#if prePost??>
-                    <div class="level-start">
-                        <a class="level level-item has-link-grey article-nav-prev"
-                           href="${context!}/archives/${prePost.url}">
+                <div class="level-start">
+                    <#if prePost??>
+                        <a class="level level-item has-link-grey article-nav-prev" href="${context!}/archives/${prePost.url!}">
                             <i class="level-item fas fa-chevron-left"></i>
                             <span class="level-item">${prePost.title!}</span>
                         </a>
-                    </div>
-                </#if>
-                <#if nextPost??>
-                    <div class="level-end">
-                        <a class="level level-item has-link-grey article-nav-next"
-                           href="${context!}/archives/${nextPost.url}">
+                    <#else>
+                        <a class="level level-item has-link-grey article-nav-prev" href="${context!}/">
+                            <i class="level-item fas fa-chevron-left"></i>
+                            <span class="level-item">没有了</span>
+                        </a>
+                    </#if>
+                </div>
+                <div class="level-end">
+                    <#if nextPost??>
+                        <a class="level level-item has-link-grey article-nav-next" href="${context!}/archives/${nextPost.url!}">
                             <span class="level-item">${nextPost.title!}</span>
                             <i class="level-item fas fa-chevron-right"></i>
                         </a>
-                    </div>
-                </#if>
+                    <#else>
+                        <a class="level level-item has-link-grey article-nav-next" href="${context!}/">
+                            <span class="level-item">没有了</span>
+                            <i class="level-item fas fa-chevron-right"></i>
+                        </a>
+                    </#if>
+                </div>
             </div>
         </div>
     </#if>
