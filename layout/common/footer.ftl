@@ -53,7 +53,7 @@
                 </#if>
                 <#if settings.social_free?? && settings.social_free!=''>
                     <p style="text-align: left; line-height: 20px; margin: 0">
-                        &copy; ${.now?string('yyyy')} ${user.nickname!}&nbsp;${settings.social_free!}&nbsp;&nbsp;v${version!}
+                        &copy; ${.now?string('yyyy')} ${user.nickname!}&nbsp;${settings.social_free!}&nbsp;&nbsp;@${version!}
                     </p>
                 </#if>
                 <#if settings.caidai!true>

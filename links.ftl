@@ -20,7 +20,7 @@
         <div style="border-left: 3px solid skyblue; margin-left: 20px">
           <p style="margin-left: 20px; font-weight: bold">名称：${user.nickname!}</p>
           <p style="margin-left: 20px; font-weight: bold">链接：<a target="_blank" href="${context!}">${context!}</a></p>
-          <p style="margin-left: 20px; font-weight: bold">头像：<a target="_blank" href="${context!}/avatar">${context!}/avatar</a></p>
+          <p style="margin-left: 20px; font-weight: bold">头像：<a target="_blank" href="${context!}avatar">${context!}avatar</a></p>
           <p style="margin-left: 20px; font-weight: bold">描述：${user.description!}</p>
         </div>
         <p style="margin-left: 10px; font-weight: bold">本人会不定期清理无法访问的链接，请确保自己的链接长期有效

@@ -10,13 +10,6 @@
             <div class="timeline">
                 <#list archive.posts as post>
                     <article class="media">
-                        <#if post.thumbnail?? && post.thumbnail!='' && (settings.post_thumbnail_enable?? && settings.post_thumbnail_enable)>
-                            <a href="${post.thumbnail}" class="media-left">
-                                <p class="image is-64x64">
-                                    <img class="thumbnail" src="${post.fullPath!}" alt="${post.title!}">
-                                </p>
-                            </a>
-                        </#if>
                         <div class="media-content">
                             <div class="content">
                                 <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="${post.createTime!}">${post.createTime?string["yyyy-MM-dd EE"]}</time>
