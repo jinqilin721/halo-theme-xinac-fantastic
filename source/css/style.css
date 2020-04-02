@@ -64,7 +64,7 @@ textarea {
   }
 }
 .tag.is-grey {
-  background: #e7e7e7;
+  background: #e7e7e7 !important;
 }
 .card {
   border-radius: 2px;
@@ -94,7 +94,7 @@ textarea {
   flex: 8;
 }
 .card-normal .card .card-image img {
-  max-height: 150px;
+  max-height: 120px;
   top: 50%;
   transform: translateX(-5%) translateY(-50%);
   position: relative;
@@ -106,7 +106,7 @@ textarea {
   filter: brightness(0.85);
 }
 .card-normal .card .card-content {
-  flex: 12;
+  flex: 20;
   padding: 1rem;
 }
 img.thumbnail {

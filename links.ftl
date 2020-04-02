@@ -44,7 +44,7 @@
             //     showUserAgent: true
             // }
           </script>
-          <halo-comment id="59" type="sheet"></halo-comment>
+          <halo-comment id="1" type="post"></halo-comment>
         </div>
       </div>
     </div>

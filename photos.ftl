@@ -29,10 +29,6 @@
     <link rel="stylesheet" href="${settings.cdn_fontawesome_css!}">
     <#include "layout/plugin/style.theme.ftl">
 
-
-    <link rel="stylesheet"
-          href="${settings.cdn_outdatedbrowser_css!}">
-
     <link rel="stylesheet" href="${theme_base!}/source/css/style.css">
     <link rel="stylesheet" href="${theme_base!}/source/css/bundle.css">
     <link rel="stylesheet" href="${theme_base!}/source/css/back-to-top.css">

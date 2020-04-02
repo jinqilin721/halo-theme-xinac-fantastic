@@ -179,6 +179,7 @@
         background-color: var(--cardbgcolor) !important;
         border-color: var(--cardbgcolor) !important;
         color: var(--color) !important;
+        border: 0;
     }
 
     .menu-list .level {

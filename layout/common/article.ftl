@@ -28,7 +28,7 @@
                             <div class="level-item">
                                 <#list post.categories as category>
                                     <a class="has-link-grey -link"
-                                       href="${category.fullPath!}">${category.name!}</a>&nbsp;
+                                       href="${category.fullPath!}">${category.name!}&emsp;</a>&nbsp;
                                 </#list>
                             </div>
                         </#if>
@@ -37,7 +37,7 @@
                             <div class="level-item">
                                 <#list categories as category>
                                     <a class="has-link-grey -link"
-                                       href="${category.fullPath!}">${category.name!}</a>&nbsp;
+                                       href="${category.fullPath!}">${category.name!}&emsp;</a>&nbsp;
                                 </#list>
                             </div>
                         </#if>

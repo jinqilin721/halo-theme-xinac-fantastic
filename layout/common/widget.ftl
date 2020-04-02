@@ -24,6 +24,9 @@
         <#if settings.sidebar_categories!true>
             <#include "../widget/category.ftl">
         </#if>
+        <#if settings.sidebar_tags!true>
+            <#include "../widget/tag.ftl">
+        </#if>
         <#if settings.sidebar_tagcloud!true>
             <#include "../widget/tagcloud.ftl">
         </#if>
@@ -36,9 +39,9 @@
             <#if settings.sidebar_recentpost!true>
                 <#include "../widget/recent_posts.ftl">
             </#if>
-            <#if settings.sidebar_recentcomment!true>
+            <#--<#if settings.sidebar_recentcomment!true>
                 <#include "../widget/recent_comments.ftl">
-            </#if>
+            </#if>-->
         <#else>
             <#if post??>
                 <#include "../widget/cate_posts.ftl">
@@ -49,7 +52,7 @@
                     <#include "../widget/recent_posts.ftl">
                 </#if>
             </#if>
-            <#if settings.sidebar_recentcomment!true>
+            <#if !is_post?? && settings.sidebar_recentcomment!true>
                 <#include "../widget/recent_comments.ftl">
             </#if>
         </#if>
@@ -59,13 +62,10 @@
             <#if settings.sidebar_recentpost!true>
                 <#include "../widget/recent_posts.ftl">
             </#if>
-            <#if settings.sidebar_recentcomment!true>
+            <#--<#if !is_post?? && settings.sidebar_recentcomment!true>
                 <#include "../widget/recent_comments.ftl">
-            </#if>
-            <#--            <#include "../widget/archive.ftl">-->
-            <#if settings.sidebar_tags!true>
-                <#include "../widget/tag.ftl">
-            </#if>
+            </#if>-->
+            <#--<#include "../widget/archive.ftl">-->
         </div>
     </#if>
         </div>

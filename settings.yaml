@@ -421,18 +421,6 @@ custom_cdn:
       type: text
       default: '//cdn.jsdelivr.net/npm/bulma@0.7.5/css/bulma.min.css'
       placeholder: 'CDN网址'
-    cdn_outdatedbrowser_js:
-      name: cdn_outdatedbrowser_js
-      label: outdatedbrowser-js(浏览器兼容性提示插件)
-      type: text
-      default: '//cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js'
-      placeholder: 'CDN网址'
-    cdn_outdatedbrowser_css:
-      name: cdn_outdatedbrowser_css
-      label: outdatedbrowser-css(浏览器兼容性提示插件)
-      type: text
-      default: '//cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css'
-      placeholder: 'CDN网址'
     cdn_pace_js:
       name: cdn_pace_js
       label: pace-js(浏览器加载效果插件)

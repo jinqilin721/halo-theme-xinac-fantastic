@@ -68,7 +68,7 @@
             <link rel="stylesheet" href="${settings.cdn_lightgallery_css!}">
             <link rel="stylesheet" href="${settings.cdn_justifiedGallery_css!}">
         </#if>
-        <link rel="stylesheet" href="${settings.cdn_outdatedbrowser_css!}">
+        <link rel="stylesheet" href="${theme_base!}/source/lib/outdatedbrowser/outdatedbrowser.min.css" />
         <script src="${settings.cdn_pace_js!}"></script>
 
         <link rel="stylesheet" href="${theme_base!}/source/css/style.css">
@@ -148,7 +148,7 @@
                                             </div>
                                         </div>
                                         <div class="level">
-                                            <div class="columns">
+                                            <div class="columns" style="width: 100%;">
                                                 <div class="column is-12-tablet is-12-desktop is-8-widescreen is-8-fullhd has-order-2 column-main">
                                                     <#nested />
                                                 </div>
