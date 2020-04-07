@@ -24,7 +24,8 @@
         outdatedBrowser({
             bgColor: '#f25648',
             color: '#ffffff',
-            lowerThan: 'borderImage'
+            lowerThan: 'borderImage',
+            languagePath: '../../source/lib/outdatedbrowser/lang/en.html'
         })
     });
 </script>
