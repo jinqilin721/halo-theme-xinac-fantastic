@@ -5,7 +5,7 @@
         <#if is_post?? || is_page?? || is_sheet??>
         <#else >
             <#if post.thumbnail?? && post.thumbnail!='' && (settings.post_thumbnail_enable?? && settings.post_thumbnail_enable)>
-                <div class="card-image">
+                <div class="card-image is-hidden-mobile">
                     <#if index>
                         <a href="${post.fullPath!}">
                             <img class="thumbnail" src="${post.thumbnail!}" alt="${post.title!}">
@@ -25,7 +25,7 @@
                           datetime="${post.createTime!}">${post.createTime?string["yyyy-MM-dd EE"]}</time>
                     <#if index>
                         <#if post.categories?? && post.categories?size gt 0>
-                            <div class="level-item">
+                            <div class="level-item is-hidden-mobile">
                                 <#list post.categories as category>
                                     <a class="has-link-grey -link"
                                        href="${category.fullPath!}">${category.name!}&emsp;</a>&nbsp;
@@ -34,7 +34,7 @@
                         </#if>
                     <#else>
                         <#if categories?? && categories?size gt 0>
-                            <div class="level-item">
+                            <div class="level-item is-hidden-mobile">
                                 <#list categories as category>
                                     <a class="has-link-grey -link"
                                        href="${category.fullPath!}">${category.name!}&emsp;</a>&nbsp;
