@@ -6,7 +6,7 @@
             </h3>
             <div class="field is-grouped is-grouped-multiline">
                 <@tagTag method="list">
-                    <#list tags as tag>
+                    <#list tags?sort_by("postCount")?reverse as tag>
                         <div class="control">
                             <a class="tags has-addons" href="${tag.fullPath!}">
                                 <span class="tag">${tag.name}</span>
