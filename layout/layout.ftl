@@ -3,35 +3,35 @@
     <#include "common/widget.ftl">
     <#include "common/module.ftl">
     <!DOCTYPE html>
-    <html lang="zh">
+    <html lang="zh-CN">
     <head>
-        <meta charset="utf-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
         <title>${title!}</title>
 
-        <meta name="keywords" content="${meta_keywords!}"/>
-        <meta name="description" content="${meta_description!}">
-        <meta property="og:type" content="website">
-        <meta property="og:title" content="${title!}">
-        <meta property="og:url" content="${canonical}">
-        <meta property="og:site_name" content="${title!}">
-        <meta property="og:description" content="${meta_description!}">
-        <meta property="og:locale" content="zh">
-        <meta property="og:image" content="${user.avatar!}">
-        <meta name="twitter:card" content="summary">
-        <meta name="twitter:title" content="${title!}">
-        <meta name="twitter:description" content="${meta_description!}">
-        <meta name="twitter:image" content="${user.avatar!}">
+        <meta name="keywords" content="${meta_keywords!}" />
+        <meta name="description" content="${meta_description!}" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="${title!}" />
+        <meta property="og:url" content="${canonical}" />
+        <meta property="og:site_name" content="${title!}" />
+        <meta property="og:description" content="${meta_description!}" />
+        <meta property="og:locale" content="zh-CN" />
+        <meta property="og:image" content="${user.avatar!}" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="${title!}" />
+        <meta name="twitter:description" content="${meta_description!}" />
+        <meta name="twitter:image" content="${user.avatar!}" />
 
-        <link rel="canonical" href="${canonical!}"/>
-
-        <link rel="alternative" href="${atom_url!}" title="${blog_title!}" type="application/atom+xml">
+        <link rel="canonical" href="${canonical!}" />
+        <link rel="alternative" href="${atom_url!}" title="${blog_title!}" type="application/atom+xml" />
 
         <@global.head />
 
-        <link rel="stylesheet" href="${settings.cdn_bulma_css!}">
-        <link rel="stylesheet" href="${settings.cdn_fontawesome_css!}">
-        <link href="${settings.cdn_google_fonts!}/css?family=Fira+Sans&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="${settings.cdn_bulma_css!}" />
+        <link rel="stylesheet" href="${settings.cdn_fontawesome_css!}" />
+        <link href="${settings.cdn_google_fonts!}/css?family=Fira+Sans&display=swap" rel="stylesheet" />
         <style>
             body > .footer,
             body > .navbar,
@@ -65,23 +65,23 @@
         </#if>
 
         <#if is_post?? || is_sheet?? || is_journal??>
-            <link rel="stylesheet" href="${settings.cdn_lightgallery_css!}">
-            <link rel="stylesheet" href="${settings.cdn_justifiedGallery_css!}">
+            <link rel="stylesheet" href="${settings.cdn_lightgallery_css!}" />
+            <link rel="stylesheet" href="${settings.cdn_justifiedGallery_css!}" />
         </#if>
         <link rel="stylesheet" href="${theme_base!}/source/lib/outdatedbrowser/outdatedbrowser.min.css" />
         <script src="${settings.cdn_pace_js!}"></script>
 
-        <link rel="stylesheet" href="${theme_base!}/source/css/style.css">
-        <link rel="stylesheet" href="${theme_base!}/source/css/bundle.css">
-        <link rel="stylesheet" href="${theme_base!}/source/css/back-to-top.css">
+        <link rel="stylesheet" href="${theme_base!}/source/css/style.css" />
+        <link rel="stylesheet" href="${theme_base!}/source/css/bundle.css" />
+        <link rel="stylesheet" href="${theme_base!}/source/css/back-to-top.css" />
         <#include "./plugin/style.theme.ftl">
         <#if post?? || journals??>
-            <link rel="stylesheet" type="text/css" href="${theme_base!}/source/lib/prism/css/prism-${settings.code_pretty!'Default'}.css"/>
+            <link rel="stylesheet" type="text/css" href="${theme_base!}/source/lib/prism/css/prism-${settings.code_pretty!'Default'}.css" />
             <script type="text/javascript" src="${theme_base!}/source/lib/prism/js/prism.js"></script>
         </#if>
         <#if is_index??>
-            <link rel="stylesheet" href="${theme_base!}/source/css/widget_pin.css">
-            <link rel="stylesheet" href="${settings.cdn_swiper_css!}">
+            <link rel="stylesheet" href="${theme_base!}/source/css/widget_pin.css" />
+            <link rel="stylesheet" href="${settings.cdn_swiper_css!}" />
         </#if>
 
         <#if settings.kanbanniang!true>
@@ -130,15 +130,15 @@
                                         </#if>
                                         <div class="level is-medium">
                                             <div class="ceta">
-                                                <div class="tabs" style="overflow: hidden">
+                                                <div class="tabs" style="overflow: hidden;">
                                                     <ul style="overflow: hidden;border-bottom-style: none">
                                                         <li class="is-active"><a>全部</a></li>
                                                         <@categoryTag method="list">
-                                                            <#list categories as category>
-                                                                <#if category_index <= 4>
+                                                            <#list categories?sort_by("postCount")?reverse as category>
+                                                                <#if category_index < 7>
                                                                     <li>
                                                                         <a href="${category.fullPath!}"
-                                                                           style="text-transform:capitalize">${category.name!}</a>
+                                                                           style="text-transform: capitalize;">${category.name!}</a>
                                                                     </li>
                                                                 </#if>
                                                             </#list>
@@ -148,7 +148,7 @@
                                             </div>
                                         </div>
                                         <div class="level">
-                                            <div class="columns" style="width: 100%;">
+                                            <div class="columns" style="width: 105%;">
                                                 <div class="column is-12-tablet is-12-desktop is-8-widescreen is-8-fullhd has-order-2 column-main">
                                                     <#nested />
                                                 </div>
