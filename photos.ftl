@@ -1,6 +1,6 @@
 <#include "./layout/common/navbar.ftl">
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-CN">
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
@@ -12,7 +12,7 @@
     <meta property="og:title" content="${title!}">
     <meta property="og:site_name" content="${title!}">
     <meta property="og:description" content="${meta_description!}">
-    <meta property="og:locale" content="zh">
+    <meta property="og:locale" content="zh-CN">
     <meta property="og:image" content="${user.avatar!}">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="${title!}">
