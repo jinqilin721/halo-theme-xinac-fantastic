@@ -17,20 +17,14 @@
 <br>
 <br>
 <br>
-<p>
-该主题的友链页面暂无法评论。因为Halo的作者没有开发这个地方的评论功能。<br>
 
-解决方案：<br>
-1. 新建一篇文章（比如我用的`Hello Halo`这篇初始文章）
-2. 然后放入回收站但不要删除。<br>
-3. 将此主题的评论页面代码 <br>
-    `<halo-comment id="59" type="sheet"></halo-comment>`部分，
-    修改为 <br>
-    `<halo-comment id="1" type="post"></halo-comment>`<br>
-    `id`就是文章的`数据库id`，不知道的去数据库查一下
-4. 然后就可以评论了。
-5. 本主题页面已修改，如不能评论请检查`id="1"`数据库里有没有对应的文章。
-</p>
+> 该主题的友链页面评论问题已解决。使用参考 
+[Halo自定义页面的使用方法](https://blog.xinac.cn/archives/halo-usage-200409)
+<br>
+> 效果预览：https://blog.xinac.cn/s/links
+
+<br>
+
 
 ---
 
