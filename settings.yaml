@@ -55,7 +55,7 @@ sidebar:
       label: 侧边栏链接
       type: radio
       data-type: bool
-      default: true
+      default: false
       options:
         - value: true
           label: 开启
@@ -99,7 +99,7 @@ sidebar:
       label: 菜单样式
       type: radio
       data-type: bool
-      default: false
+      default: true
       options:
         - value: true
           label: 级联菜单
@@ -111,7 +111,7 @@ sidebar:
       label: 侧边栏最近评论
       type: radio
       data-type: bool
-      default: false
+      default: true
       options:
         - value: true
           label: 开启

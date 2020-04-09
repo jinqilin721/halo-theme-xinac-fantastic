@@ -39,9 +39,9 @@
             <#if settings.sidebar_recentpost!true>
                 <#include "../widget/recent_posts.ftl">
             </#if>
-            <#--<#if settings.sidebar_recentcomment!true>
+            <#if settings.sidebar_recentcomment!true>
                 <#include "../widget/recent_comments.ftl">
-            </#if>-->
+            </#if>
         <#else>
             <#if post??>
                 <#include "../widget/cate_posts.ftl">
