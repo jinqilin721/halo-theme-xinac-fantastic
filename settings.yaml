@@ -16,7 +16,7 @@ sidebar:
       name: profile_follow_url
       label: 【关注我】按钮地址
       type: text
-      placeholder: '默认为博客地址'
+      placeholder: '默认为博客地址，不填写则不显示'
     sidebar_profile:
       name: sidebar_profile
       label: 侧边栏个人资料
@@ -105,7 +105,6 @@ sidebar:
           label: 级联菜单
         - value: false
           label: 列表
-
     sidebar_recentcomment:
       name: sidebar_recentcomment
       label: 侧边栏最近评论
@@ -128,6 +127,12 @@ sidebar:
           label: 开启
         - value: false
           label: 关闭
+    theme_static_base:
+      name: theme_static_base
+      label: 主题静态文件URL前缀（静态文件和页面文件可分开布署）
+      type: text
+      placeholder: '主题静态文件URL前缀，不知道无需填写'
+      default: '//s.xinac.net'
 
 post:
   label: 文章设置

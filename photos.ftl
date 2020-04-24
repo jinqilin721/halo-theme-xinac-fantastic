@@ -1,73 +1,84 @@
 <#include "./layout/common/navbar.ftl">
+<#include "./layout/common/head.ftl">
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-    <title>${title!}</title>
+    <title>${options.photos_title!} - ${blog_title!}</title>
 
     <meta name="keywords" content="${meta_keywords!}"/>
-    <meta name="description" content="${meta_description!}">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="${title!}">
-    <meta property="og:site_name" content="${title!}">
-    <meta property="og:description" content="${meta_description!}">
-    <meta property="og:locale" content="zh-CN">
-    <meta property="og:image" content="${user.avatar!}">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="${title!}">
-    <meta name="twitter:description" content="${meta_description!}">
-    <meta name="twitter:image" content="${user.avatar!}">
+    <meta name="description" content="${meta_description!}"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="${options.photos_title!}"/>
+    <meta property="og:site_name" content="${options.photos_title!}"/>
+    <meta property="og:description" content="${meta_description!}"/>
+    <meta property="og:locale" content="zh-CN"/>
+    <meta property="og:image" content="${user.avatar!}"/>
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="${options.photos_title!}"/>
+    <meta name="twitter:description" content="${meta_description!}"/>
+    <meta name="twitter:image" content="${user.avatar!}"/>
 
     <link rel="canonical" href="${canonical!}"/>
 
-    <link rel="alternative" href="${atom_url!}" title="${blog_title!}" type="application/atom+xml">
+    <link rel="alternative" href="${atom_url!}" title="${blog_title!}" type="application/atom+xml"/>
 
     <@global.head />
 
-    <link rel="stylesheet" href="${settings.cdn_bulma_css!}">
-    <link rel="stylesheet" href="${settings.cdn_fontawesome_css!}">
+    <link rel="stylesheet" href="${settings.cdn_bulma_css!}"/>
+    <link rel="stylesheet" href="${settings.cdn_fontawesome_css!}"/>
     <#include "layout/plugin/style.theme.ftl">
 
-    <link rel="stylesheet" href="${theme_base!}/source/css/style.css">
-    <link rel="stylesheet" href="${theme_base!}/source/css/bundle.css">
-    <link rel="stylesheet" href="${theme_base!}/source/css/back-to-top.css">
-    <link rel="stylesheet" href="${theme_base!}/source/lib/lg/css/lightgallery.css">
+    <link rel="stylesheet" href="${theme_base!}/source/css/style.css"/>
+    <link rel="stylesheet" href="${theme_base!}/source/css/bundle.css"/>
+    <link rel="stylesheet" href="${theme_base!}/source/css/back-to-top.css"/>
+    <link rel="stylesheet" href="${theme_base!}/source/lib/lg/css/lightgallery.css"/>
 </head>
 <body class="is-3-column">
 <@navbar 'page' />
 <section class="section photos">
+    <div class="container">
     <@photoTag method="listTeams">
         <#list teams as item>
-            <h3 class="level title is-3">${item.team}</h3>
-            <div class="columns is-multiline"  id="view_${item.team}">
-                <#list item.photos as photo>
-                    <div class="column is-one-quarter-desktop is-half-tablet">
+            <h3 class="level title is-3">${item.team!}</h3>
+            <div class="columns is-multiline"  id="view_${item.team!}">
+                <#list item.photos?sort_by('takeTime')?reverse as photo>
+                    <#if photo_index gte options.photos_page_size>
+                        <#break>
+                    </#if>
+                    <div class="column is-one-quarter-desktop is-half-tablet" style="margin-bottom: 40px;">
                         <div class="card" style="width: 100%">
                             <div class="card-image">
                                 <figure class="image">
-                                    <a href="${photo.url}" class="show" >
-                                        <img src="${photo.thumbnail}" alt="" >
+                                    <a href="${photo.url!}" class="show" title="${photo.name!}" >
+                                        <img src="${photo.thumbnail!}"
+                                             data-src="${photo.thumbnail!}"
+                                             alt="${photo.takeTime!?string('yyyy.MM.dd')} - ${photo.name!}">
                                     </a>
                                 </figure>
-<#--                                <div class="card-content is-overlay is-clipped">-->
-<#--                                    <span class="tag is-info">-->
-<#--                                    ${photo.name}-->
-<#--                                    </span>-->
-<#--                                </div>-->
+                                <#--<div class="card-content is-overlay is-clipped">
+                                    <span class="tag is-info">
+                                    ${photo.name}
+                                    </span>
+                                </div>-->
                             </div>
-<#--                            <footer class="card-footer">-->
-<#--                                <a class="card-footer-item">-->
-<#--                                    ${photo.name}-->
-<#--                                </a>-->
-<#--                            </footer>-->
+                            <footer class="card-footer" style="background-color: #fff; height: 64px; overflow-y: hidden;">
+                                <a class="card-footer-item">
+                                    <#if photo.name?? && photo.name != '' && photo.name?length gt 50 >
+                                        ${photo.takeTime!?string('yyyy.MM.dd')} - ${photo.name!?substring(0,50)}
+                                    <#else>
+                                        ${photo.takeTime!?string('yyyy.MM.dd')} - ${photo.name!}
+                                    </#if>
+                                </a>
+                            </footer>
                         </div>
                     </div>
                 </#list>
             </div>
         </#list>
-
     </@photoTag>
+    </div>
 </section>
 <#include "./layout/common/footer.ftl">
 <#include "./layout/plugin/back-to-top.ftl">
@@ -97,7 +108,6 @@
             selector: '.show'
         });
     })
-
 </script>
 <style>
     .card {

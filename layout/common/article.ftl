@@ -45,8 +45,8 @@
                 </div>
                 <div class="level-right">
                     <div class="level-item">
-                        <span class="level-item has-text-grey">评论(${post.commentCount!'0'})</span>
-                        <span class="level-item has-text-grey">浏览(${post.visits!'0'})</span>
+                        <span class="level-item has-text-grey"><i class="fa fa-comments" style="font-size: 1em !important;" aria-hidden="true"></i>(${post.commentCount!'0'})</span>
+                        <span class="level-item has-text-grey"><i class="fa fa-eye" style="font-size: 1em !important;" aria-hidden="true"></i>(${post.visits!'0'})</span>
                     </div>
                 </div>
             </div>
@@ -80,7 +80,7 @@
                     <div class="level-start">
                         <#if tags?? && (tags?size gt 0)>
                             <div class="level-item">
-                                <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                                <span class="is-size-6 has-text-grey has-mr-7"><i class="fa fa-tags" style="font-size: 0.75em !important;" aria-hidden="true"></i></span>
                                 <#list tags as tag>
                                     <a class="has-link-grey -link" style="margin-left: 10px;" href="${tag.fullPath!}">${tag.name!}</a>&nbsp;
                                 </#list>
@@ -89,7 +89,7 @@
                     </div>
                     <div class="level-end">
                         <div class="level-item">
-                            <span class="has-text-grey">最后编辑时间：${post.editTime!?string('yyyy-MM-dd HH:mm:ss')}</span>
+                            <span class="has-text-grey">更新时间：${post.editTime!?string('yyyy-MM-dd HH:mm:ss')}</span>
                         </div>
                     </div>
                 </div>
@@ -99,7 +99,7 @@
                     <div class="level-start">
                         <#if post.tags?? && (post.tags?size gt 0)>
                             <div class="level-item">
-                                <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                                <span class="is-size-6 has-text-grey has-mr-7"><i class="fa fa-tags" style="font-size: 0.75em !important;" aria-hidden="true"></i></span>
                                 <#list post.tags as tag>
                                     <a class="has-link-grey -link" style="margin-left: 10px;" href="${tag.fullPath!}">${tag.name!}</a>&nbsp;
                                 </#list>
@@ -159,7 +159,7 @@
                             <span class="level-item">${prevPost.title!}</span>
                         </a>
                     <#else>
-                        <a class="level level-item has-link-grey article-nav-prev" href="${context!}/">
+                        <a class="level level-item has-link-grey article-nav-prev" href="${context!}">
                             <i class="level-item fas fa-chevron-left"></i>
                             <span class="level-item">没有了</span>
                         </a>
@@ -172,7 +172,7 @@
                             <i class="level-item fas fa-chevron-right"></i>
                         </a>
                     <#else>
-                        <a class="level level-item has-link-grey article-nav-next" href="${context!}/">
+                        <a class="level level-item has-link-grey article-nav-next" href="${context!}">
                             <span class="level-item">没有了</span>
                             <i class="level-item fas fa-chevron-right"></i>
                         </a>

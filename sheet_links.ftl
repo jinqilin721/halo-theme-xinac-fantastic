@@ -1,7 +1,6 @@
 <#include "layout/layout.ftl">
 <#include "layout/comment/comment.ftl">
 <@layout title="${sheet.title!} | ${blog_title!} " canonical="${links_url!}">
-
   <style>
     .clearfix:after {
       visibility: hidden;
@@ -11,11 +10,9 @@
       clear: both;
       height: 0;
     }
-
     .clearfix {
       *zoom: 1;
     }
-
     .menu-list li {
       width: 270px;
       max-width: 300px;
@@ -26,11 +23,8 @@
       color: #4a4a4a;
       display: block;
       float: left;
-      /* transition: all .3s; */
     }
-
     .media-content p {
-      /*line-height: 30px;*/
       margin: 0;
       padding-top: 10px;
     }
@@ -41,6 +35,7 @@
     }
     .menu-list a:hover {
       text-decoration: underline;
+      background-color: #fff !important;
     }
   </style>
   <div class="card widget">
@@ -67,7 +62,7 @@
                   </div>
                   <div class="media-content">
                     <p class="link-title">${link.name!}</p>
-                    <p class="link-desc"><a href="${link.url!}" target="_blank"> ${link.url!}</a></p>
+                    <p class="link-desc"><a href="${link.url!}" target="_blank" title="${link.description!}"> ${link.url!}</a></p>
                   </div>
                 </div>
             </li>

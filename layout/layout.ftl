@@ -1,4 +1,5 @@
 <#macro layout title,canonical>
+    <#include "common/head.ftl">
     <#include "common/navbar.ftl">
     <#include "common/widget.ftl">
     <#include "common/module.ftl">
