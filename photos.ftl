@@ -1,7 +1,7 @@
 <#include "./layout/common/navbar.ftl">
 <#include "./layout/common/head.ftl">
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
@@ -48,7 +48,7 @@
                         <#break>
                     </#if>
                     <div class="column is-one-quarter-desktop is-half-tablet" style="margin-bottom: 40px;">
-                        <div class="card" style="width: 100%">
+                        <div class="card" style="width: 100%; height: 205px;">
                             <div class="card-image">
                                 <figure class="image">
                                     <a href="${photo.url!}" class="show" title="${photo.name!}" >
@@ -63,7 +63,7 @@
                                     </span>
                                 </div>-->
                             </div>
-                            <footer class="card-footer" style="background-color: #fff; height: 64px; overflow-y: hidden;">
+                            <footer class="card-footer is-hidden-mobile" style="background-color: #fff; height: 64px; overflow-y: hidden;">
                                 <a class="card-footer-item">
                                     <#if photo.name?? && photo.name != '' && photo.name?length gt 50 >
                                         ${photo.takeTime!?string('yyyy.MM.dd')} - ${photo.name!?substring(0,50)}
@@ -114,15 +114,16 @@
         height: 100%;
     }
     .card-image {
-        height: 100%;
+        /*height: 100%;*/
     }
 
     .image {
         height: 100%;
-        padding: 5px;
+        /*padding: 5px;*/
     }
     .image img{
         height: 100%;
+        border-radius: 0.3rem !important;
     }
     #animated-thumbnail a {
         display: block;

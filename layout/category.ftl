@@ -17,7 +17,7 @@
     <#if posts.getTotalPages() gt 0>
         <div class="card card-transparent">
             <nav class="pagination is-centered" role="navigation" aria-label="pagination">
-                <@paginationTag method="categoryPosts" page="${posts.number}" total="${posts.totalPages}" display="3" slug="${category.slug!}">
+                <@paginationTag method="categoryPosts" page="${posts.number}" total="${posts.totalPages}" display="5" slug="${category.slug!}">
                     <div class="pagination-previous<#if pagination.hasPrev><#else > is-invisible is-hidden-mobile</#if>">
                         <a class="is-flex-grow has-text-black-ter" href="${pagination.prevPageFullPath!}">上一页</a>
                     </div>
