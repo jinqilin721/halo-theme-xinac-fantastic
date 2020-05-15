@@ -3,9 +3,9 @@ name: Xinac-Fantastic
 author:
   name: 新逸Cary
   website: https://blog.xinac.cn
-description: Fantastic主题，https://github.com/jinqilin721/halo-theme-fantastic
+description: Fantastic主题修改版，https://github.com/jinqilin721/halo-theme-xinac-fantastic
 logo: https://blog.xinac.cn/avatar
-website: https://github.com/jinqilin721/halo-theme-fantastic
-repo: https://github.com/jinqilin721/halo-theme-fantastic
+website: https://github.com/jinqilin721/halo-theme-xinac-fantastic
+repo: https://github.com/jinqilin721/halo-theme-xinac-fantastic
 version: 1.3.2
 require: 1.3.0
