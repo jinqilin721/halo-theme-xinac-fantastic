@@ -4,15 +4,15 @@
     <div class="card" <#if is_post??>style="display: block"</#if> >
         <#if is_post?? || is_page?? || is_sheet??>
         <#else >
-            <#if post.thumbnail?? && post.thumbnail!='' && (settings.post_thumbnail_enable?? && settings.post_thumbnail_enable)>
+            <#if check_post_thumbnail_enable()>
                 <div class="card-image is-hidden-mobile">
                     <#if index>
                         <a href="${post.fullPath!}">
-                            <img class="thumbnail" src="${post.thumbnail!}" alt="${post.title!}">
+                            <img class="thumbnail" src="${post_thumbnail_url(post.thumbnail!'')}" alt="${post.title!}">
                         </a>
                     <#else>
                         <span class="image is-7by1">
-                            <img class="thumbnail" src="${post.thumbnail!}" alt="${post.title!}">
+                            <img class="thumbnail" src="${post_thumbnail_url(post.thumbnail!'')}" alt="${post.title!}">
                         </span>
                     </#if>
                 </div>

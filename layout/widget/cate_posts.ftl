@@ -8,10 +8,10 @@
             <#list posts as post>
                 <#if post_index lt 3>
                 <article class="media">
-                    <#if post.thumbnail?? && post.thumbnail!='' && (settings.post_thumbnail_enable?? && settings.post_thumbnail_enable)>
+                    <#if check_post_thumbnail_enable()>
                         <a href="${post.fullPath!}" class="media-left">
                             <p class="image is-64x64">
-                                <img class="thumbnail" src="${post.thumbnail!}" alt="${post.title!}">
+                                <img class="thumbnail" src="${post_thumbnail_url(post.thumbnail!'')}" alt="${post.title!}">
                             </p>
                         </a>
                     </#if>

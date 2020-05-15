@@ -12,6 +12,17 @@ sidebar:
           label: 开启
         - value: false
           label: 关闭
+    site_gray:
+      name: site_gray
+      label: ※全站灰色背景※
+      type: radio
+      data-type: bool
+      default: false
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
     profile_follow_url:
       name: profile_follow_url
       label: 【关注我】按钮地址
@@ -129,10 +140,10 @@ sidebar:
           label: 关闭
     theme_static_base:
       name: theme_static_base
-      label: 主题静态文件URL前缀（静态文件和页面文件可分开布署）
+      label: 主题静态文件URL前缀（建议填写：//s.xinac.net）
       type: text
-      placeholder: '主题静态文件URL前缀，不知道无需填写'
-      default: '//s.xinac.net'
+      placeholder: '主题CDN URL，不知道无需填写'
+      default: ''
 
 post:
   label: 文章设置
@@ -214,14 +225,15 @@ post:
     post_thumbnail_enable:
       name: post_thumbnail_enable
       label: 显示文章封面图
-      type: radio
-      data-type: bool
-      default: true
+      type: select
+      default: 'true'
       options:
-        - value: true
-          label: 开启
-        - value: false
-          label: 关闭
+        - value: 'true'
+          label: '开启，无封面图时使用随机图片'
+        - value: 'random_pic'
+          label: '开启，全部使用随机图片'
+        - value: 'false'
+          label: '关闭'
 social:
   label: 博客信息
   items:
@@ -400,113 +412,113 @@ custom_cdn:
       name: cdn_jquery_js
       label: jQuery
       type: text
-      default: '//cdn.bootcss.com/jquery/3.4.1/jquery.min.js'
+      default: '//s.xinac.net/static/jquery/v3.5.0/jquery.min.js'
       placeholder: 'CDN网址'
     cdn_fontawesome_css:
       name: cdn_fontawesome_css
       label: fontawesome-css(Font Awesome图标字体库)
       type: text
-      default: '//cdn.bootcss.com/font-awesome/5.4.1/css/all.min.css'
+      default: '//s.xinac.net/static/font-awesome/v5.12.1/css/all.min.css'
       placeholder: 'CDN网址'
     cdn_busuanzi_js:
       name: cdn_busuanzi_js
       label: busuanzi(不蒜子网页计数器)
       type: text
-      default: '//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js'
+      default: '//s.xinac.net/static/busuanzi/v2.3.0/bsz.pure.mini.js'
       placeholder: 'CDN网址'
     cdn_canvas_nest_js:
       name: cdn_canvas_nest_js
       label: canvas-nest(线条)
       type: text
-      default: '//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js'
+      default: '//s.xinac.net/static/canvas-nest.js/v1.0.1/canvas-nest.min.js'
       placeholder: 'CDN网址'
     cdn_bulma_css:
       name: cdn_bulma_css
       label: bulma-css(Bulma框架)
       type: text
-      default: '//cdn.jsdelivr.net/npm/bulma@0.7.5/css/bulma.min.css'
+      default: '//s.xinac.net/static/bulma/v0.7.5/css/bulma.min.css'
       placeholder: 'CDN网址'
     cdn_pace_js:
       name: cdn_pace_js
       label: pace-js(浏览器加载效果插件)
       type: text
-      default: '//cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js'
+      default: '//s.xinac.net/static/pace/v1.0.2/pace.min.js'
       placeholder: 'CDN网址'
     cdn_vue_js:
       name: cdn_vue_js
       label: vue-js(VUE框架，评论模块用)
       type: text
-      default: '//cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.min.js'
+      default: '//s.xinac.net/static/vue/v2.6.11/vue.min.js'
       placeholder: 'CDN网址'
     cdn_swiper_js:
       name: cdn_swiper_js
       label: Swiper-js(触摸滑动插件)
       type: text
-      default: '//cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js'
+      default: '//s.xinac.net/static/Swiper/v4.3.5/js/swiper.min.js'
       placeholder: 'CDN网址'
     cdn_swiper_css:
       name: cdn_swiper_css
       label: Swiper-css(触摸滑动插件)
       type: text
-      default: '//cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.min.css'
+      default: '//s.xinac.net/static/Swiper/v4.3.5/css/swiper.min.css'
       placeholder: 'CDN网址'
     cdn_mathjax_js:
       name: cdn_mathjax_js
       label: MathJax(数学公式支持插件)
       type: text
-      default: '//cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML'
+      default: '//s.xinac.net/static/mathjax/v2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML'
       placeholder: 'CDN网址'
     cdn_aplayer_js:
       name: cdn_aplayer_js
       label: APlayer-js(音乐播放器)
       type: text
-      default: '//cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js'
+      default: '//s.xinac.net/static/aplayer/v1.10.1/APlayer.min.js'
       placeholder: 'CDN网址'
     cdn_aplayer_css:
       name: cdn_aplayer_css
       label: APlayer-css(音乐播放器)
       type: text
-      default: '//cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css'
+      default: '//s.xinac.net/static/aplayer/v1.10.1/APlayer.min.css'
       placeholder: 'CDN网址'
     cdn_meting_js:
       name: cdn_meting_js
       label: Meting-js(音乐播放器)
       type: text
-      default: '//cdn.jsdelivr.net/npm/meting@1.2.0/dist/Meting.min.js'
+      default: '//s.xinac.net/static/meting/v1.2.0/Meting.min.js'
       placeholder: 'CDN网址'
     cdn_justifiedGallery_js:
       name: cdn_justifiedGallery_js
       label: Justified Gallery-js(相册展示插件)
       type: text
-      default: '//cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.js'
+      default: '//s.xinac.net/static/justifiedGallery/v3.7.0/js/jquery.justifiedGallery.min.js'
       placeholder: 'CDN网址'
     cdn_justifiedGallery_css:
       name: cdn_justifiedGallery_css
       label: Justified Gallery-css(相册展示插件)
       type: text
-      default: '//cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css'
+      default: '//s.xinac.net/static/justifiedGallery/v3.7.0/css/justifiedGallery.min.css'
       placeholder: 'CDN网址'
     cdn_lightgallery_js:
       name: cdn_lightgallery_js
       label: lightgallery-js(灯箱插件)
       type: text
-      default: '//cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js'
+      default: '//s.xinac.net/static/lightgallery/v1.6.9/js/lightgallery.min.js'
       placeholder: 'CDN网址'
     cdn_lightgallery_css:
       name: cdn_lightgallery_css
       label: lightgallery-css(灯箱插件)
       type: text
-      default: '//cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css'
+      default: '//s.xinac.net/static/lightgallery/v1.6.9/css/lightgallery.min.css'
       placeholder: 'CDN网址'
     cdn_share_js:
       name: cdn_share_js
       label: social-share-js(文章分享)
       type: text
-      default: '//cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js'
+      default: '//s.xinac.net/static/social-share.js/v1.0.16/js/social-share.min.js'
       placeholder: 'CDN网址'
     cdn_share_css:
       name: cdn_share_css
       label: social-share-css(文章分享)
       type: text
-      default: '//cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css'
+      default: '//s.xinac.net/static/social-share.js/v1.0.16/css/share.min.css'
       placeholder: 'CDN网址'

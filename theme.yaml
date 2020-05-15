@@ -3,9 +3,9 @@ name: Xinac-Fantastic
 author:
   name: 新逸Cary
   website: https://blog.xinac.cn
-description: 本主题fork自 Bursteretion ，原作者 imkundev，当前版本v1.3.0：https://github.com/jinqilin721/halo-theme-fantastic
+description: Fantastic主题，https://github.com/jinqilin721/halo-theme-fantastic
 logo: https://blog.xinac.cn/avatar
 website: https://github.com/jinqilin721/halo-theme-fantastic
 repo: https://github.com/jinqilin721/halo-theme-fantastic
-version: 1.3.0
+version: 1.3.2
 require: 1.3.0

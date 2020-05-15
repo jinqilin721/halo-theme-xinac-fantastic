@@ -1,5 +1,14 @@
-
 <style>
+    <#if settings.site_gray!false>
+    html {
+        -webkit-filter: grayscale(100%);
+        -moz-filter: grayscale(100%);
+        -ms-filter: grayscale(100%);
+        -o-filter: grayscale(100%);
+        filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
+        _filter: none;
+    }
+    </#if>
     :root {
         --color: #333333;
         --background: #f7f7f7;

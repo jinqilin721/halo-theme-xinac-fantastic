@@ -84,6 +84,7 @@
 <#include "./layout/plugin/back-to-top.ftl">
 
 </body>
+<script src="${settings.cdn_jquery_js!}"></script>
 <script src="${theme_base!}/source/lib/lg/js/lightgallery.min.js"></script>
 <script src="${theme_base!}/source/lib/lg/js/lg-thumbnail.min.js"></script>
 <script src="${theme_base!}/source/lib/lg/js/lg-fullscreen.min.js"></script>
@@ -107,7 +108,21 @@
             progressBar: true,
             selector: '.show'
         });
-    })
+    });
+
+    var url = location.href;
+    var urlstatus = false;
+    $(".navbar-start a").each(function () {
+        if ((url + '/').indexOf($(this).attr('href')) > -1 && $(this).attr('href') != '/') {
+            $(this).addClass('is-active');
+            urlstatus = true;
+        } else {
+            $(this).removeClass('is-active');
+        }
+    });
+    if (!urlstatus) {
+        $(".navbar-start a").eq(0).addClass('is-active');
+    }
 </script>
 <style>
     .card {
