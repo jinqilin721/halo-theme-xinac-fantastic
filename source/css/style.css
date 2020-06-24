@@ -257,6 +257,9 @@ img.thumbnail {
   border-left: 0.4rem solid #4b8af3;
   background-color: #e9f5fe;
 }
+.content blockquote {
+  padding: 0.25em 0.5em;
+}
 .rtl {
   direction: rtl;
 }
@@ -436,6 +439,9 @@ img.thumbnail {
 .content pre {
   font-size: 0.95em;
   font-family: 'Fira Sans', monospace, "Microsoft YaHei";
+}
+.content code {
+  color: #ff3860 !important;
 }
 .content blockquote footer strong + cite {
   margin-left: 0.5em;

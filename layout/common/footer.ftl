@@ -45,7 +45,7 @@
                     </script>
                 </#if>
                 <#if settings.social_beian?? && settings.social_beian!=''>
-                    <p style="text-align: left; line-height: 20px;margin: 0">
+                    <p style="text-align: left; line-height: 20px;">
                         <a target="_blank" href="http://beian.miit.gov.cn/" style="color: black;font-style: inherit;font-weight: inherit;">
                             ${settings.social_beian!}
                         </a>
@@ -53,7 +53,7 @@
                 </#if>
                 <#if settings.social_free?? && settings.social_free!=''>
                     <p style="text-align: left; line-height: 20px; margin: 0">
-                        &copy; ${.now?string('yyyy')} ${user.nickname!}&nbsp;${settings.social_free!}&nbsp;&nbsp;@${version!}
+                        &copy; ${user.nickname!}&nbsp;${settings.social_free!}
                     </p>
                 </#if>
                 <#if settings.caidai!true>

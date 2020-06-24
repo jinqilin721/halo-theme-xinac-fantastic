@@ -114,7 +114,7 @@
                     var id = that.attr('href');
                     var target = $(id);
 
-                    if (scrollTop >= target.offset().top - offset) {
+                    if (target.offset() && scrollTop >= target.offset().top - offset) {
                         anchors.removeClass('active');
                         anchors.parent().removeClass("lit-active");
                         that.addClass('active');
