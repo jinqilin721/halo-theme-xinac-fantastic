@@ -27,7 +27,7 @@ sidebar:
       name: profile_follow_url
       label: 【关注我】按钮地址
       type: text
-      placeholder: '默认为博客地址，不填写则不显示'
+      placeholder: '自定义链接地址，不填写则不显示'
     sidebar_profile:
       name: sidebar_profile
       label: 侧边栏个人资料
@@ -140,9 +140,9 @@ sidebar:
           label: 关闭
     theme_static_base:
       name: theme_static_base
-      label: 主题静态文件URL前缀（建议填写：//s.xinac.net）
+      label: 主题CDN（建议填写：//s.xinac.net）
       type: text
-      placeholder: '主题CDN URL，不知道无需填写'
+      placeholder: '主题CDN URL，不知道无需填写，为空时使用本地静态资源'
       default: ''
 
 post:
@@ -281,7 +281,7 @@ social:
       name: social_free
       label: 底部自定义
       type: textarea
-      default: '，Powered by <a href="https://github.com/halo-dev/halo" target="_blank">Halo</a> & <a href="https://github.com/jinqilin721/halo-theme-fantastic" target="_blank">xinac-fantastic</a>'
+      default: '，Powered by <a href="https://github.com/halo-dev/halo" target="_blank">Halo</a> & <a href="https://github.com/jinqilin721/halo-theme-xinac-fantastic" target="_blank">xinac-fantastic</a>'
 
 plugins:
   label: 插件
@@ -341,7 +341,7 @@ plugins:
       label: 开始时间 (如果已开启博客计时, 此项必填)
       type: text
       default: '2020-01-01 00:00:00'
-      placeholder: '形如2019-08-10 00:00:00格式'
+      placeholder: '如2020-01-01 00:00:00格式'
     caidai:
       name: caidai
       label: 背景彩带
@@ -383,7 +383,7 @@ custom_links:
       name: links_top
       label: 顶部链接
       type: textarea
-      default: ''
+      default: '<a class="navbar-item" target="_blank" title="GitHub" href="https://github.com/jinqilin721"><i class="fab fa-github"></i></a>'
     links_footer:
       name: links_footer
       label: 底部链接
