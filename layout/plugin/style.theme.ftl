@@ -133,7 +133,7 @@
         }
         blockquote {
             background-color: var(--code-bg-color) !important;
-            color: #fff !important;
+            color: #000 !important;
         }
         .card .content,
         /**
@@ -211,7 +211,7 @@
         code[class*="language-"],
         pre[class*="language-"] {
             color: var(--color);
-            background-color: var(--code-bg-color) !important;
+            background-color: var(--code-bg-color);
         }
         pre[class*="language-"],
         :not(pre) > code[class*="language-"] {
@@ -263,10 +263,10 @@
             color: var(--code-deleted-color);
         }
         .line-numbers .line-numbers-rows {
-            background-color: var(--code-line-numbers-bg-color) !important;
+            /*background-color: var(--code-line-numbers-bg-color) !important;*/
         }
         .line-numbers-rows > span:before {
-            color: var(--code-line-numbers-color) !important;
+            /*color: var(--code-line-numbers-color) !important;*/
         }
         .line-highlight {
             background: rgba(21, 21, 21, 0.2) !important;

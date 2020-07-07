@@ -35,14 +35,8 @@
     <link rel="stylesheet" href="${settings.cdn_lightgallery_css!}" />
     <link rel="stylesheet" href="${settings.cdn_justifiedGallery_css!}" />
 </#if>
-    <link rel="stylesheet" href="${theme_base!}/source/lib/outdatedbrowser/outdatedbrowser.min.css" />
-    <link rel="stylesheet" href="${theme_base!}/source/css/style.css" />
     <link rel="stylesheet" href="${theme_base!}/source/css/bundle.css" />
     <link rel="stylesheet" href="${theme_base!}/source/css/back-to-top.css" />
-<#if post?? || journals??>
-    <link rel="stylesheet" href="${theme_base!}/source/lib/prism/css/prism-${settings.code_pretty!'Default'}.css" />
-    <script type="text/javascript" src="${theme_base!}/source/lib/prism/js/prism.js"></script>
-</#if>
 <#if is_index??>
     <link rel="stylesheet" href="${theme_base!}/source/css/widget_pin.css" />
     <link rel="stylesheet" href="${settings.cdn_swiper_css!}" />
@@ -52,6 +46,8 @@
 </#if>
     <script type="text/javascript" src="${settings.cdn_pace_js!}"></script>
     <#include "./plugin/style.theme.ftl">
+    <link rel="stylesheet" href="${theme_base!}/source/lib/outdatedbrowser/outdatedbrowser.min.css" />
+    <link rel="stylesheet" href="${theme_base!}/source/css/style.css" />
     <style>
         body > .footer,
         body > .navbar,
@@ -78,6 +74,9 @@
         }
     </#if>
     </style>
+<#if is_post?? || is_sheet?? || is_journal??>
+    <link rel="stylesheet" href="${theme_base!}/source/lib/prism/css/prism-${settings.code_pretty!'Default'}.css" />
+</#if>
 </head>
 
 <body class="is-3-column">

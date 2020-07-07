@@ -18,7 +18,10 @@
         }).createToc();
     </script>
 </#if>
-
+<#if is_post?? || is_sheet?? || is_journal??>
+    <script type="text/javascript" src="${theme_base!}/source/lib/prism/js/prism.js"></script>
+    <script>$('pre').addClass("line-numbers");</script>
+</#if>
 <script>
     var url = location.href;
     var urlstatus = false;

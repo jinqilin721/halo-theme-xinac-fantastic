@@ -1,231 +1,290 @@
-code {
-    background-color: #F8F8F8;
-    color: #333333;
-    font-size: .875em;
-    font-weight: 400;
-    padding: .25em .5em .25em;
-    border-radius: 2px;
-}
+/* PrismJS 1.20.0
+https://prismjs.com/download.html#themes=prism-funky&languages=markup+css+clike+javascript+apacheconf+aspnet+bash+basic+c+csharp+cpp+css-extras+d+dart+django+docker+git+go+groovy+http+hpkp+hsts+ini+java+javastacktrace+json+julia+kotlin+latex+less+lua+makefile+markdown+markup-templating+nginx+objectivec+perl+php+php-extras+plsql+powershell+properties+pure+python+r+jsx+tsx+ruby+rust+sass+scss+scala+scheme+sql+stylus+swift+typescript+vbnet+velocity+vim+visual-basic+yaml&plugins=line-highlight+line-numbers+show-language+inline-color+toolbar+copy-to-clipboard */
+/**
+ * prism.js Funky theme
+ * Based on “Polyfilling the gaps” talk slides http://lea.verou.me/polyfilling-the-gaps/
+ * @author Lea Verou
+ */
+
 code[class*="language-"],
 pre[class*="language-"] {
-    font-family: Consolas, Menlo, Monaco, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", "Courier New", Courier, monospace;
-    font-size: 0.813rem;
-    font-weight: 400;
-    direction: ltr;
-    text-align: left;
-    white-space: pre;
-    word-spacing: normal;
-    word-break: normal;
-    -moz-tab-size: 4;
-    -o-tab-size: 4;
-    tab-size: 4;
-    -webkit-hyphens: none;
-    -ms-hyphens: none;
-    hyphens: none;
-    background: #F1F3F3;
-    color: #303030;
-    line-height: 2;
-}
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
 
-pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
-code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
-    text-shadow: none;
-    background: #E0E0E0;
-}
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
 
-pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
-code[class*="language-"]::selection, code[class*="language-"] ::selection {
-    text-shadow: none;
-    background: #E0E0E0;
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
 }
 
 /* Code blocks */
 pre[class*="language-"] {
-    padding: -2em;
-    margin: .5em 0;
-    overflow: auto;
-    border-radius: 2px;
+	padding: .4em .8em;
+	margin: .5em 0;
+	overflow: auto;
+	background: url('data:image/svg+xml;charset=utf-8,<svg%20version%3D"1.1"%20xmlns%3D"http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg"%20width%3D"100"%20height%3D"100"%20fill%3D"rgba(0%2C0%2C0%2C.2)">%0D%0A<polygon%20points%3D"0%2C50%2050%2C0%200%2C0"%20%2F>%0D%0A<polygon%20points%3D"0%2C100%2050%2C100%20100%2C50%20100%2C0"%20%2F>%0D%0A<%2Fsvg>');
+	background-size: 1em 1em;
+}
+
+code[class*="language-"] {
+	background: black;
+	color: white;
+	box-shadow: -.3em 0 0 .3em black, .3em 0 0 .3em black;
 }
 
 /* Inline code */
 :not(pre) > code[class*="language-"] {
-    padding: .1em;
-    border-radius: .3em;
+	padding: .2em;
+	border-radius: .3em;
+	box-shadow: none;
+	white-space: normal;
 }
 
 .token.comment,
 .token.prolog,
 .token.doctype,
 .token.cdata {
-    color: #B0B0B0;
+	color: #aaa;
 }
 
 .token.punctuation {
-    color: #303030;
+	color: #999;
 }
 
 .token.namespace {
-    opacity: .7;
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol {
+	color: #0cf;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin {
+	color: yellow;
 }
 
 .token.operator,
-.token.boolean,
-.token.number {
-    color: #FD8900;
-}
-
-.token.property {
-    color: #ABA800;
-}
-
-.token.tag {
-    color: #3777E6;
-}
-
-.token.string {
-    color: #1faaaa;
-}
-
-.token.selector {
-    color: #AD00A1;
-}
-
-.token.attr-name {
-    color: #FD8900;
-}
-
 .token.entity,
 .token.url,
 .language-css .token.string,
-.style .token.string {
-    color: #1faaaa;
-}
-
-.token.attr-value,
-.token.keyword,
-.token.control,
-.token.directive,
-.token.unit {
-    color: #00C918;
-}
-
-.token.statement,
-.token.regex,
-.token.atrule {
-    color: #1faaaa;
-}
-
-.token.placeholder,
-.token.variable {
-    color: #3777E6;
-}
-
-.token.deleted {
-    text-decoration: line-through;
-}
-
+.token.variable,
 .token.inserted {
-    border-bottom: 1px dotted #151515;
-    text-decoration: none;
+	color: yellowgreen;
 }
 
-.token.italic {
-    font-style: italic;
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+	color: deeppink;
+}
+
+.token.regex,
+.token.important {
+	color: orange;
 }
 
 .token.important,
 .token.bold {
-    font-weight: bold;
+	font-weight: bold;
 }
-
-.token.important {
-    color: #FF0086;
+.token.italic {
+	font-style: italic;
 }
 
 .token.entity {
-    cursor: help;
+	cursor: help;
 }
 
-pre > code.highlight {
-    outline: 0.4em solid #FF0086;
-    outline-offset: .4em;
+.token.deleted {
+	color: red;
 }
 
-.line-numbers .line-numbers-rows {
-    background-color:  #E0E0E0 !important;
+/* Plugin styles: Diff Highlight */
+pre.diff-highlight.diff-highlight > code .token.deleted:not(.prefix),
+pre > code.diff-highlight.diff-highlight .token.deleted:not(.prefix) {
+	background-color: rgba(255, 0, 0, .3);
+	display: inline;
 }
 
-.line-numbers-rows > span:before {
-    color: #888 !important;
+pre.diff-highlight.diff-highlight > code .token.inserted:not(.prefix),
+pre > code.diff-highlight.diff-highlight .token.inserted:not(.prefix) {
+	background-color: rgba(0, 255, 128, .3);
+	display: inline;
+}
+
+pre[data-line] {
+	position: relative;
+	padding: 1em 0 1em 3em;
 }
 
 .line-highlight {
-    background: rgba(21, 21, 21, 0.2) !important;
-    background: -webkit-linear-gradient(left, rgba(21, 21, 21, 0.2) 70%, rgba(21, 21, 21, 0)) !important;
-    background: linear-gradient(to right, rgba(21, 21, 21, 0.2) 70%, rgba(21, 21, 21, 0)) !important;
+	position: absolute;
+	left: 0;
+	right: 0;
+	padding: inherit 0;
+	margin-top: 1em; /* Same as .prism’s padding-top */
+
+	background: hsla(24, 20%, 50%,.08);
+	background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+
+	pointer-events: none;
+
+	line-height: inherit;
+	white-space: pre;
 }
 
+	.line-highlight:before,
+	.line-highlight[data-end]:after {
+		content: attr(data-start);
+		position: absolute;
+		top: .4em;
+		left: .6em;
+		min-width: 1em;
+		padding: 0 .5em;
+		background-color: hsla(24, 20%, 50%,.4);
+		color: hsl(24, 20%, 95%);
+		font: bold 65%/1.5 sans-serif;
+		text-align: center;
+		vertical-align: .3em;
+		border-radius: 999px;
+		text-shadow: none;
+		box-shadow: 0 1px white;
+	}
+
+	.line-highlight[data-end]:after {
+		content: attr(data-end);
+		top: auto;
+		bottom: .4em;
+	}
+
+.line-numbers .line-highlight:before,
+.line-numbers .line-highlight:after {
+	content: none;
+}
+
+pre[id].linkable-line-numbers span.line-numbers-rows {
+	pointer-events: all;
+}
+pre[id].linkable-line-numbers span.line-numbers-rows > span:before {
+	cursor: pointer;
+}
+pre[id].linkable-line-numbers span.line-numbers-rows > span:hover:before {
+	background-color: rgba(128, 128, 128, .2);
+}
+
+pre[class*="language-"].line-numbers {
+	position: relative;
+	padding-left: 3.8em;
+	counter-reset: linenumber;
+}
+
+pre[class*="language-"].line-numbers > code {
+	position: relative;
+	white-space: inherit;
+}
+
+.line-numbers .line-numbers-rows {
+	position: absolute;
+	pointer-events: none;
+	top: 0;
+	font-size: 100%;
+	left: -3.8em;
+	width: 3em; /* works for line-numbers below 1000 lines */
+	letter-spacing: -1px;
+	border-right: 1px solid #999;
+
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+
+}
+
+	.line-numbers-rows > span {
+		display: block;
+		counter-increment: linenumber;
+	}
+
+		.line-numbers-rows > span:before {
+			content: counter(linenumber);
+			color: #999;
+			display: block;
+			padding-right: 0.8em;
+			text-align: right;
+		}
 
 div.code-toolbar {
-    position: relative;
+	position: relative;
 }
 
 div.code-toolbar > .toolbar {
-    position: absolute;
-    top: .3em;
-    right: .2em;
-    transition: opacity 0.3s ease-in-out;
-    opacity: 0;
+	position: absolute;
+	top: .3em;
+	right: .2em;
+	transition: opacity 0.3s ease-in-out;
+	opacity: 0;
 }
 
 div.code-toolbar:hover > .toolbar {
-    opacity: 1;
+	opacity: 1;
 }
 
 /* Separate line b/c rules are thrown out if selector is invalid.
    IE11 and old Edge versions don't support :focus-within. */
 div.code-toolbar:focus-within > .toolbar {
-    opacity: 1;
+	opacity: 1;
 }
 
 div.code-toolbar > .toolbar .toolbar-item {
-    display: inline-block;
-}
-div.code-toolbar > .toolbar .toolbar-item:not(:first-child){
-    margin-left: 10px;
+	display: inline-block;
 }
 
 div.code-toolbar > .toolbar a {
-    cursor: pointer;
+	cursor: pointer;
 }
 
 div.code-toolbar > .toolbar button {
-    background: none;
-    border: 0;
-    color: inherit;
-    font: inherit;
-    line-height: normal;
-    overflow: visible;
-    padding: 0;
-    -webkit-user-select: none; /* for button */
-    -moz-user-select: none;
-    -ms-user-select: none;
+	background: none;
+	border: 0;
+	color: inherit;
+	font: inherit;
+	line-height: normal;
+	overflow: visible;
+	padding: 0;
+	-webkit-user-select: none; /* for button */
+	-moz-user-select: none;
+	-ms-user-select: none;
 }
 
 div.code-toolbar > .toolbar a,
 div.code-toolbar > .toolbar button,
 div.code-toolbar > .toolbar span {
-    font-size: .8em;
-    padding: .5em 1em;
-    background: #f5f2f0;
-    background: rgba(224, 224, 224, 0.2);
-    box-shadow: 0 2px 0 0 rgba(0,0,0,0.2);
-    border-radius: 2px;
-}
-div.code-toolbar > .toolbar a:not(:first-child),
-div.code-toolbar > .toolbar button:not(:first-child),
-div.code-toolbar > .toolbar span:not(:first-child) {
-    margin-left: 10px;
+	color: #bbb;
+	font-size: .8em;
+	padding: 0 .5em;
+	background: #f5f2f0;
+	background: rgba(224, 224, 224, 0.2);
+	box-shadow: 0 2px 0 0 rgba(0,0,0,0.2);
+	border-radius: .5em;
 }
 
 div.code-toolbar > .toolbar a:hover,
@@ -234,18 +293,41 @@ div.code-toolbar > .toolbar button:hover,
 div.code-toolbar > .toolbar button:focus,
 div.code-toolbar > .toolbar span:hover,
 div.code-toolbar > .toolbar span:focus {
-    color: inherit;
-    text-decoration: none;
-    color: #333333;
-    cursor: pointer;
-    opacity: 1;
+	color: inherit;
+	text-decoration: none;
 }
 
-.line-numbers-rows > span:before {
-    content: counter(linenumber);
-    color: #888 !important;
-    display: block;
-    padding-right: 0.8em;
-    text-align: center;
+span.inline-color-wrapper {
+	/*
+	 * The background image is the following SVG inline in base 64:
+	 *
+	 * <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2 2">
+	 *     <path fill="gray" d="M0 0h2v2H0z"/>
+	 *     <path fill="white" d="M0 0h1v1H0zM1 1h1v1H1z"/>
+	 * </svg>
+	 *
+	 * SVG-inlining explained:
+	 * https://stackoverflow.com/a/21626701/7595472
+	 */
+	background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyIDIiPjxwYXRoIGZpbGw9ImdyYXkiIGQ9Ik0wIDBoMnYySDB6Ii8+PHBhdGggZmlsbD0id2hpdGUiIGQ9Ik0wIDBoMXYxSDB6TTEgMWgxdjFIMXoiLz48L3N2Zz4=");
+	/* This is to prevent visual glitches where one pixel from the repeating pattern could be seen. */
+	background-position: center;
+	background-size: 110%;
 
+	display: inline-block;
+	height: 1.333ch;
+	width: 1.333ch;
+	margin: 0 .333ch;
+	box-sizing: border-box;
+	border: 1px solid white;
+	outline: 1px solid rgba(0,0,0,.5);
+	overflow: hidden;
 }
+
+span.inline-color {
+	display: block;
+	/* To prevent visual glitches again */
+	height: 120%;
+	width: 120%;
+}
+

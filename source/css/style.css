@@ -255,7 +255,7 @@ img.thumbnail {
 }
 .article blockquote {
   border-left: 0.4rem solid #4b8af3;
-  background-color: #e9f5fe;
+  background-color: #EBEDED !important;
 }
 .content blockquote {
   padding: 0.25em 0.5em;
@@ -440,7 +440,7 @@ img.thumbnail {
   font-size: 0.95em;
   font-family: 'Fira Sans', monospace, "Microsoft YaHei";
 }
-.content code {
+:not(pre) > code {
   color: #ff3860 !important;
 }
 .content blockquote footer strong + cite {
