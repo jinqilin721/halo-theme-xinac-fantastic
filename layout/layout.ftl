@@ -49,10 +49,10 @@
     <link rel="stylesheet" href="${theme_base!}/source/lib/outdatedbrowser/outdatedbrowser.min.css" />
     <link rel="stylesheet" href="${theme_base!}/source/css/style.css" />
     <style>
-        body > .footer,
+        /*body > .footer,*/
         body > .navbar,
         body > .section {
-            opacity: 0
+            opacity: 0;
         }
     <#if is_post?? || is_sheet?? || is_journal??>
         .content code .number {

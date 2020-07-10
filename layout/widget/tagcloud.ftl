@@ -1,6 +1,6 @@
 <@tagTag method="list">
     <#if tags?? && tags?size gt 0>
-        <div class="card widget is-hidden-mobile">
+        <div class="card widget is-hidden-mobile is-hidden-touch">
             <div class="card-content">
                 <h3 class="menu-label">
                     标签云

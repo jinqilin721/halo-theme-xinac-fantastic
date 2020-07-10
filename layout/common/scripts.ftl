@@ -36,4 +36,12 @@
     if (!urlstatus) {
         $(".navbar-start a").eq(0).addClass('is-active');
     }
+
+    $(function () {
+        $('.link-hover-cus').hover(function () {
+            $(this).find('.level-right').show();
+        }, function () {
+            $(this).find('.level-right').hide();
+        })
+    });
 </script>

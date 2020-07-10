@@ -1,6 +1,6 @@
 <@linkTag method="list">
     <#if links?? && links?size gt 0>
-        <div class="card widget is-hidden-mobile">
+        <div class="card widget is-hidden-mobile is-hidden-touch">
             <div class="card-content">
                 <div class="menu">
                 <h3 class="menu-label">
@@ -9,11 +9,11 @@
                 <ul class="menu-list">
                     <#list links?sort_by("priority") as link>
                         <li>
-                            <a class="level is-mobile" href="${link.url!}" target="_blank">
+                            <a class="level is-mobile link-hover-cus" title="${link.url!}" href="${link.url!}" target="_blank">
                                 <span class="level-left">
                                     <span class="level-item">${link.name}</span>
                                 </span>
-                                <span class="level-right">
+                                <span class="level-right" style="display: none;">
                                     <span class="level-item tag">${link.url!}</span>
                                 </span>
                             </a>

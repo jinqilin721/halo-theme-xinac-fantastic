@@ -351,4 +351,11 @@
             padding: 0 10px !important;
             margin: 0 !important;
         }
+        .social-share .icon-wechat .wechat-qrcode {
+            top: 0 !important;
+            left: 40px !important;
+        }
+        .right-tips{
+            z-index: 99;
+        }
     </style>

@@ -1,6 +1,6 @@
 <#macro module name>
     <#if name == 'share'>
-        <div class="column is-4-tablet is-1-desktop <#if is_sheet??>is-hidden-desktop</#if> is-1-widescreen is-1-fullhd  has-order-1 column-left is-hidden-touch <%= sticky_class(left) %>">
+        <div class="right-tips column is-4-tablet is-1-desktop <#if is_sheet??>is-hidden-desktop</#if> is-1-widescreen is-1-fullhd  has-order-1 column-left is-hidden-touch <%= sticky_class(left) %>">
             <div class="level" style="position: fixed;top: 0;height: 100%;width: 30px;">
                 <#if settings.share_type?? && settings.share_type!=''>
                     <#include "../share/${settings.share_type}.ftl">
