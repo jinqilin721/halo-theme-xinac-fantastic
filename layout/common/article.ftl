@@ -51,7 +51,7 @@
                 </div>
             </div>
             <#if is_post??>
-                <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+                <h1 class="title is-size-3 is-size-4-mobile">
                     <#if index>
                         <a class="has-link-black-ter" href="${post.fullPath!}">${post.title!}</a>
                     <#else>
@@ -59,7 +59,7 @@
                     </#if>
                 </h1>
             <#else>
-                <h1 class="title is-size-5 is-size-5-mobile has-text-weight-normal">
+                <h1 class="title is-size-5 is-size-5-mobile">
                     <#if index>
                         <a class="has-link-black-ter" href="${post.fullPath!}">${post.title!}</a>
                     <#else>

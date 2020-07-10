@@ -358,4 +358,8 @@
         .right-tips{
             z-index: 99;
         }
+        .post-article {
+            border-top: 2px dashed #c5c5c5;
+            padding-top: 15px;
+        }
     </style>
