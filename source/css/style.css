@@ -418,8 +418,9 @@ img.thumbnail {
 .content h4,
 .content h5,
 .content h6 {
-  font-weight: 400;
+  /*font-weight: 400;*/
 }
+/*
 .content h1 {
   font-size: 1.55em;
 }
@@ -431,6 +432,35 @@ img.thumbnail {
 }
 .content h4 {
   font-size: 1.125em;
+}
+ */
+.content h1 {
+  font-size: 1.9em;
+  margin: 10px -15px 10px -14px;
+  padding: 0 8px;
+  border-left: 5px solid #3690cf;
+  font-weight: bold;
+}
+.content h2 {
+  font-size: 1.6em;
+  margin: 10px -15px 10px -14px;
+  padding: 0 13px;
+  border-left: 5px solid #e40000;
+  font-weight: bold;
+}
+.content h3 {
+  font-size: 1.3em;
+  margin: 10px -15px 10px -14px;
+  padding: 0 18px;
+  border-left: 5px solid #3690cf;
+  font-weight: bold;
+}
+.content h4 {
+  font-size: 1em;
+  margin: 10px -15px 10px -14px;
+  padding: 0 23px;
+  border-left: 5px solid #c37512;
+  font-weight: bold;
 }
 .content h5 {
   font-size: 1em;
