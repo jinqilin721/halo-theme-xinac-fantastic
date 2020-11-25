@@ -1,52 +1,235 @@
-<#include "layout/layout.ftl">
-<#include "layout/common/article.ftl">
-<#include "layout/comment/comment.ftl">
-<@layout title="链接 - ${blog_title!}" canonical="${links_url!}">
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="viggo" />
+    <title>网址导航 | ${blog_title!}</title>
+    <meta name="keywords" content="网址导航">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Arimo:400,700,400italic">
+    <link rel="stylesheet" href="${theme_base!}/source/assets/css/fonts/linecons/css/linecons.css">
+    <link rel="stylesheet" href="//s.xinac.net/static/font-awesome/v4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="${theme_base!}/source/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="${theme_base!}/source/assets/css/xenon-core.css">
+    <link rel="stylesheet" href="${theme_base!}/source/assets/css/xenon-components.css">
+    <link rel="stylesheet" href="${theme_base!}/source/assets/css/xenon-skins.css">
+    <link rel="stylesheet" href="${theme_base!}/source/assets/css/nav.css">
+    <script src="//s.xinac.net/static/jquery/v1.12.4/jquery.min.js"></script>
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="//s.xinac.net/static/html5shiv/v3.7.2/html5shiv.min.js"></script>
+    <script src="//s.xinac.net/static/respond/v1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
 
-  <#include "layout/widget/links.ftl">
-  <div class="card widget">
-    <div class="card-content">
-      <h1 class="menu-label" style="font-size: 20px; text-align:center;">友链申请</h1>
-      <div style="margin-left: 10px">
-        <h2 style="font-size: 15px; font-weight: bold"># 友链须知</h2>
-        <div style="border-left: 3px solid skyblue; margin-left: 20px">
-          <p style="margin-left: 20px; font-weight: bold">1. 请确认您的网站可正常访问</p>
-          <p style="margin-left: 20px; font-weight: bold">2. 内容包括但不限于原创、技术博客</p>
-          <p style="margin-left: 20px; font-weight: bold">3. 不接受含有黄赌毒、政治敏感、暴力的网站</p>
-          <p style="margin-left: 20px; font-weight: bold">4. 没有广告</p>
-          <p style="margin-left: 20px; font-weight: bold">5. 添加本站链接</p>
+<body class="page-body">
+<!-- skin-white -->
+<div class="page-container">
+    <div class="sidebar-menu toggle-others fixed">
+        <div class="sidebar-menu-inner">
+            <header class="logo-env">
+                <!-- logo -->
+                <div class="logo">
+                    <a href="/" target="_blank" class="logo-expanded">
+                        <img src="${blog_logo!}" width="100%" alt="${user.description!}" />
+                    </a>
+                    <a href="/" target="_blank" class="logo-collapsed">
+                        <img src="${user.avatar!}" width="40" alt="${user.description!}" />
+                    </a>
+                </div>
+                <div class="mobile-menu-toggle visible-xs">
+                    <a href="#" data-toggle="user-info-menu">
+                        <i class="linecons-cog"></i>
+                    </a>
+                    <a href="#" data-toggle="mobile-menu">
+                        <i class="fa-bars"></i>
+                    </a>
+                </div>
+            </header>
+
+            <ul id="main-menu" class="main-menu">
+    <@linkTag method="listTeams">
+        <#list teams as item>
+            <#if item.team?? && item.team != ''>
+                <li>
+                    <a href="#${item.team!}" class="smooth">
+                        <i class="fa fa-leaf fa-fw"></i>
+                        <span class="title">${item.team!}</span>
+                    </a>
+                </li>
+            <#else>
+                <li>
+                    <a href="#未分类" class="smooth">
+                        <i class="fa fa-leaf fa-fw"></i>
+                        <span class="title">未分类</span>
+                    </a>
+                </li>
+            </#if>
+        </#list>
+                <li>
+                    <a href="/s/about" target="_blank">
+                        <i class="fa fa-comment fa-fw"></i>
+                        <span class="tooltip-blue">关于本站</span>
+                    </a>
+                </li>
+    </@linkTag>
+            </ul>
         </div>
-        <h2 style="font-size: 15px; font-weight: bold"># 本站信息</h2>
-        <div style="border-left: 3px solid skyblue; margin-left: 20px">
-          <p style="margin-left: 20px; font-weight: bold">名称：${user.nickname!}</p>
-          <p style="margin-left: 20px; font-weight: bold">链接：<a target="_blank" href="${context!}">${context!}</a></p>
-          <p style="margin-left: 20px; font-weight: bold">头像：<a target="_blank" href="${context!}avatar">${context!}avatar</a></p>
-          <p style="margin-left: 20px; font-weight: bold">描述：${user.description!}</p>
-        </div>
-        <p style="margin-left: 10px; font-weight: bold">本人会不定期清理无法访问的链接，请确保自己的链接长期有效
-        </p>
-        <p style="margin-left: 10px; font-weight: bold">有需要互换友链的童鞋也可在下方评论区留言。</p>
-      </div>
     </div>
-  </div>
-  <div class="card" style="margin-top: 2rem">
-    <div class="card-content">
-      <p class="title is-5">
-        评论
-      </p>
-      <div class="content">
-        <div class="post-comment-wrap">
-          <script src="${settings.cdn_vue_js!}"></script>
-          <script src="${options.comment_internal_plugin_js!'//cdn.jsdelivr.net/npm/halo-comment-normal@1.1.1/dist/halo-comment.min.js'}"></script>
-          <script>
-            // var configs = {
-            //     autoLoad: true,
-            //     showUserAgent: true
-            // }
-          </script>
-          <halo-comment id="1" type="post"></halo-comment>
-        </div>
-      </div>
+    <div class="main-content">
+        <nav class="navbar user-info-navbar" role="navigation">
+            <!-- User Info, Notifications and Menu Bar -->
+            <!-- Left links for user info navbar -->
+            <ul class="user-info-menu left-links list-inline list-unstyled">
+                <li class="hidden-sm hidden-xs">
+                    <a href="#" data-toggle="sidebar">
+                        <i class="fa-bars"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <@linkTag method="listTeams">
+            <#list teams as item>
+            <#if item.team?? && item.team != ''>
+                <h4 class="text-gray"><i class="linecons-tag" style="margin-right: 7px;" id="${item.team!}"></i>${item.team!}</h4>
+            <#else>
+                <h4 class="text-gray"><i class="linecons-tag" style="margin-right: 7px;" id="未分类"></i>未分类</h4>
+            </#if>
+                <div class="row">
+                <#list item.links?sort_by('priority')?reverse as link>
+                    <#if link.name?starts_with("-1") || link.name?ends_with("-1")>
+                        <#continue>
+                    </#if>
+                    <div class="col-sm-3">
+                        <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('${link.url!}', '_blank')" data-toggle="tooltip" data-placement="bottom" title="${link.url!}" data-original-title="${link.url!}">
+                            <div class="xe-comment-entry">
+                                <a class="xe-user-img">
+                                    <#if link.logo?? && link.logo != ''>
+                                        <img data-src="${link.logo!}" class="lozad img-circle" width="40">
+                                    <#else>
+                                        <#--
+                                        <img data-src="${theme_base!}/source/images/gg.jpg" class="lozad img-circle" width="40">
+                                        -->
+                                        <img data-src="https://api.xinac.net/icon?url=${link.url!}" class="lozad img-circle" width="40">
+                                    </#if>
+                                </a>
+                                <div class="xe-comment">
+                                    <a href="#" class="xe-user-name overflowClip_1">
+                                        <strong>${link.name!}</strong>
+                                    </a>
+                                    <p class="overflowClip_2">${link.description!}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            <#if link_index == 3>
+                </div>
+                <div class="row">
+            </#if>
+                </#list>
+                </div>
+                <br />
+            </#list>
+        </@linkTag>
+
+        <footer class="main-footer sticky footer-type-1">
+            <div class="footer-inner">
+                <!-- Add your copyright text here -->
+                <div class="footer-text">
+                    <script type="text/javascript" src="//s.xinac.net/static/js_foot.js"></script>
+                </div>
+                <!-- Go to Top Link, just add rel="go-top" to any link to add this functionality -->
+                <div class="go-up">
+                    <a href="#" rel="go-top">
+                        <i class="fa-angle-up"></i>
+                    </a>
+                </div>
+            </div>
+        </footer>
     </div>
-  </div>
-</@layout>
+</div>
+<!-- 锚点平滑移动 -->
+<script type="text/javascript">
+    $(document).ready(function() {
+        //img lazy loaded
+        const observer = lozad();
+        observer.observe();
+
+        $(document).on('click', '.has-sub', function(){
+            var _this = $(this)
+            if(!$(this).hasClass('expanded')) {
+                setTimeout(function(){
+                    _this.find('ul').attr("style","")
+                }, 300);
+
+            } else {
+                $('.has-sub ul').each(function(id,ele){
+                    var _that = $(this)
+                    if(_this.find('ul')[0] != ele) {
+                        setTimeout(function(){
+                            _that.attr("style","")
+                        }, 300);
+                    }
+                })
+            }
+        })
+        $('.user-info-menu .hidden-sm').click(function(){
+            if($('.sidebar-menu').hasClass('collapsed')) {
+                $('.has-sub.expanded > ul').attr("style","")
+            } else {
+                $('.has-sub.expanded > ul').show()
+            }
+        })
+        $("#main-menu li ul li").click(function() {
+            $(this).siblings('li').removeClass('active'); // 删除其他兄弟元素的样式
+            $(this).addClass('active'); // 添加当前元素的样式
+        });
+        $("a.smooth").click(function(ev) {
+            ev.preventDefault();
+
+            public_vars.$mainMenu.add(public_vars.$sidebarProfile).toggleClass('mobile-is-visible');
+            ps_destroy();
+            $("html, body").animate({
+                scrollTop: $($(this).attr("href")).offset().top - 30
+            }, {
+                duration: 500,
+                easing: "swing"
+            });
+        });
+        return false;
+    });
+
+    var href = "";
+    var pos = 0;
+    $("a.smooth").click(function(e) {
+        $("#main-menu li").each(function() {
+            $(this).removeClass("active");
+        });
+        $(this).parent("li").addClass("active");
+        e.preventDefault();
+        href = $(this).attr("href");
+        pos = $(href).position().top - 30;
+    });
+</script>
+<!-- Bottom Scripts -->
+<script src="${theme_base!}/source/assets/js/bootstrap.min.js"></script>
+<script src="${theme_base!}/source/assets/js/TweenMax.min.js"></script>
+<script src="${theme_base!}/source/assets/js/resizeable.js"></script>
+<script src="${theme_base!}/source/assets/js/joinable.js"></script>
+<script src="${theme_base!}/source/assets/js/xenon-api.js"></script>
+<script src="${theme_base!}/source/assets/js/xenon-toggles.js"></script>
+<!-- JavaScripts initializations and stuff -->
+<script src="${theme_base!}/source/assets/js/xenon-custom.js"></script>
+<script src="${theme_base!}/source/assets/js/lozad.js"></script>
+
+<script type="text/javascript" src="//s.xinac.net/static/baidu_push.js"></script>
+<script type="text/javascript" src="//s.xinac.net/stat/js_stat_baidu_blog.xinac.cn.js"></script>
+<script type="text/javascript" src="//s.xinac.net/stat/js_stat_baidu_www.xinac.cn.js"></script>
+<div style="display: none;">
+    <script type="text/javascript" src="//s.xinac.net/static/js_stat.js"></script>
+</div>
+
+</body>
+</html>

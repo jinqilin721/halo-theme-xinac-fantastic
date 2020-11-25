@@ -49,6 +49,9 @@
           </#if>
           <ul class="menu-list clearfix">
             <#list item.links?sort_by('priority')?reverse as link>
+              <#if link.name?starts_with("-1") || link.name?ends_with("-1")>
+                  <#continue>
+              </#if>
             <li>
                 <div class="media">
                   <div class="media-left">
@@ -56,7 +59,10 @@
                       <#if link.logo?? && link.logo != ''>
                         <img src="${link.logo}" alt="${link.name}">
                       <#else>
+                      <#--
                         <img src="${theme_base!}/source/images/gg.jpg" alt="${link.name!}">
+                      -->
+                        <img src="https://api.xinac.net/icon?url=${link.url!}" alt="${link.name!}">
                       </#if>
                     </figure>
                   </div>
