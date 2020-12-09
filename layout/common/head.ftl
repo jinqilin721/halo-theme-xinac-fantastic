@@ -28,3 +28,13 @@
         </#if>
     </#if>
 </#function>
+
+<#-- 截取指定个数的字符 -->
+<#function get_title_head title number>
+    <#if title?? && number?number gt 0>
+        <#if title?length gte number>
+            <#return title?substring(0, number)>
+        </#if>
+    </#if>
+    <#return title>
+</#function>

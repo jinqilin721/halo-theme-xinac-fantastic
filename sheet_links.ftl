@@ -62,13 +62,13 @@
                       <#--
                         <img src="${theme_base!}/source/images/gg.jpg" alt="${link.name!}">
                       -->
-                        <img src="https://api.xinac.net/icon?url=${link.url!}" alt="${link.name!}">
+                        <img src="https://api.xinac.net/icon/?url=${link.url!}" alt="${link.name!}">
                       </#if>
                     </figure>
                   </div>
                   <div class="media-content">
                     <p class="link-title">${link.name!}</p>
-                    <p class="link-desc"><a href="${link.url!}" target="_blank" title="${link.description!}"> ${link.url!}</a></p>
+                    <p class="link-desc"><a href="${link.url!}" target="_blank" title="<#if link.description?? && link.description != ''>${link.description!}<#else>${link.url!}</#if>"> ${get_title_head(link.url!, 28)}</a></p>
                   </div>
                 </div>
             </li>

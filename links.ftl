@@ -112,7 +112,7 @@
                                         <#--
                                         <img data-src="${theme_base!}/source/images/gg.jpg" class="lozad img-circle" width="40">
                                         -->
-                                        <img data-src="https://api.xinac.net/icon?url=${link.url!}" class="lozad img-circle" width="40">
+                                        <img data-src="https://api.xinac.net/icon/?url=${link.url!}" class="lozad img-circle" width="40">
                                     </#if>
                                 </a>
                                 <div class="xe-comment">
